@@ -1,0 +1,49 @@
+import ccxt
+import pandas as pd
+from ta.momentum import RSIIndicator
+from ta.trend import SMAIndicator
+import time
+
+# 🔐 Введи свои API-ключи сюда
+api_key = 'ТВОЙ_API_KEY'
+api_secret = 'ТВОЙ_API_SECRET'
+
+# Настройки
+symbol = 'BTC/USDT' # можешь заменить на любую другую пару
+timeframe = '1h'
+limit = 100
+
+# Подключение к Binance
+exchange = ccxt.binance({
+    'apiKey': api_key,
+    'secret': api_secret,
+    'enableRateLimit': True,
+})
+
+def fetch_data():
+    print("📊 Загружаем данные...")
+    ohlcv = exchange.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+    df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+    df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
+    return df
+
+def analyze(df):
+    df['rsi'] = RSIIndicator(df['close'], window=14).rsi()
+    df['sma'] = SMAIndicator(df['close'], window=20).sma_indicator()
+    last_rsi = df['rsi'].iloc[-1]
+    last_price = df['close'].iloc[-1]
+    print(f"📈 Цена: {last_price:.2f} | RSI: {last_rsi:.2f}")
+
+    if last_rsi < 30:
+        print("🔵 RSI < 30: Сигнал на ПОКУПКУ")
+    elif last_rsi > 70:
+        print("🔴 RSI > 70: Сигнал на ПРОДАЖУ")
+    else:
+        print("🟡 Нет чёткого сигнала")
+
+# Главный цикл (один раз)
+try:
+    df = fetch_data()
+    analyze(df)
+except Exception as e:
+    print("❌ Ошибка:", str(e))

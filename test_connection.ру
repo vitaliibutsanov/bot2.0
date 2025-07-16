@@ -1,0 +1,19 @@
+import os
+from dotenv import load_dotenv
+import ccxt
+
+# Загружаем .env переменные
+load_dotenv()
+api_key = os.getenv("BINANCE_API_KEY")
+secret_key = os.getenv("BINANCE_SECRET_KEY")
+
+# Подключаемся к Binance
+exchange = ccxt.binance({
+    'apiKey': api_key,
+    'secret': secret_key,
+    'enableRateLimit': True,
+})
+
+# Получаем цену BTC/USDT
+ticker = exchange.fetch_ticker('BTC/USDT')
+print(f"Актуальная цена BTC/USDT: {ticker['last']}")
