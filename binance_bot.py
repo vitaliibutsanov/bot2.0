@@ -1,8 +1,7 @@
 import os
 import ccxt
-import asyncio
-from telegram import Bot, Update
-from telegram.ext import Application, CommandHandler
+from telegram import Update
+from telegram.ext import Application, CommandHandler, CallbackContext
 from dotenv import load_dotenv
 
 # Загрузка ключей из .env
@@ -19,51 +18,60 @@ binance = ccxt.binance({
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 CHAT_ID = int(os.getenv('TELEGRAM_CHAT_ID'))
 
-async def send_telegram(msg):
-    """Отправка сообщения в Telegram"""
-    bot = Bot(token=TELEGRAM_TOKEN)
-    await bot.send_message(chat_id=CHAT_ID, text=msg)
+def get_binance_balance():
+    """Синхронное получение баланса с Binance"""
+    balance = binance.fetch_balance()
+    return {
+        'USDT': balance['total']['USDT'],
+        'BTC': balance['total']['BTC'],
+        'ETH': balance['total']['ETH']
+    }
 
-async def check_balance(update: Update = None):
-    """Проверка баланса на Binance"""
+async def check_balance(update: Update, context: CallbackContext):
+    """Обработчик команды /balance"""
     try:
-        balance = binance.fetch_balance()['USDT']['free']
-        msg = f"💰 Баланс: {balance:.2f} USDT"
-        if update:
-            await update.message.reply_text(msg)
-        await send_telegram(msg)
+        balance = get_binance_balance()
+        response = f"""
+💰 Ваши балансы:
+USDT: {balance['USDT']:.2f}
+BTC: {balance['BTC']:.6f}
+ETH: {balance['ETH']:.6f}
+        """
+        await update.message.reply_text(response)
     except Exception as e:
-        error_msg = f"❌ Помилка: {str(e)}"
-        if update:
-            await update.message.reply_text(error_msg)
-        await send_telegram(error_msg)
+        await update.message.reply_text(f"❌ Ошибка: {str(e)}")
 
-async def start(update: Update, context):
-    """Обробник команди /start"""
+async def start(update: Update, context: CallbackContext):
+    """Обработчик команды /start"""
     await update.message.reply_text(
-        "🤖 Бот для Binance активовано!\n"
-        "Доступні команди:\n"
-        "/balance - Перевірити баланс\n"
+        "🤖 Бот для Binance активирован!\n"
+        "Доступные команды:\n"
+        "/balance - Проверить баланс\n"
         "/price BTC - Курс BTC"
     )
 
-async def price(update: Update, context):
-    """Курс криптовалюти"""
-    coin = context.args[0].upper() if context.args else 'BTC'
-    ticker = binance.fetch_ticker(f"{coin}/USDT")
-    await update.message.reply_text(
-        f"📊 {coin}: {ticker['last']:.2f} USDT\n"
-        f"24h: {ticker['percentage']:.2f}%"
-    )
+async def price(update: Update, context: CallbackContext):
+    """Курс криптовалюты"""
+    try:
+        coin = context.args[0].upper() if context.args else 'BTC'
+        ticker = binance.fetch_ticker(f"{coin}/USDT")
+        await update.message.reply_text(
+            f"📊 {coin}: {ticker['last']:.2f} USDT\n"
+            f"24h: {ticker['percentage']:.2f}%"
+        )
+    except Exception as e:
+        await update.message.reply_text(f"❌ Ошибка: {str(e)}")
 
-def run_bot():
+def main():
     """Запуск бота"""
     app = Application.builder().token(TELEGRAM_TOKEN).build()
+    
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("balance", check_balance))
     app.add_handler(CommandHandler("price", price))
+    
+    print("Бот запущен...")
     app.run_polling()
 
 if __name__ == "__main__":
-    # Асинхронний запуск
-    asyncio.run(run_bot())
+    main()
