@@ -206,27 +206,31 @@ async def set_risk(update: Update, context: CallbackContext):
     
     await update.message.reply_text(msg)
 
-def main():
-
- async def analyze(update: Update, context: CallbackContext):
+async def analyze(update: Update, context: CallbackContext):
     """Заглушка для команды /analyze"""
     await update.message.reply_text("🔍 Анализ пока не реализован. Ожидайте обновлений!")
 
+def main():
     """Запуск бота"""
-    app = Application.builder().token(TELEGRAM_TOKEN).build()
+    print(">>> MAIN START")
+    try:
+        app = Application.builder().token(TELEGRAM_TOKEN).build()
 
-    # Основные команды
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("balance", check_balance))
-    app.add_handler(CommandHandler("price", price))
+        # Основные команды
+        app.add_handler(CommandHandler("start", start))
+        app.add_handler(CommandHandler("balance", check_balance))
+        app.add_handler(CommandHandler("price", price))
 
-    # Торговые команды
-    app.add_handler(CommandHandler("status", trading_status))
-    app.add_handler(CommandHandler("risk", set_risk))
-    app.add_handler(CommandHandler("analyze", analyze))
+        # Торговые команды
+        app.add_handler(CommandHandler("status", trading_status))
+        app.add_handler(CommandHandler("risk", set_risk))
+        app.add_handler(CommandHandler("analyze", analyze))
 
-    print("Бот запущен...")
-    app.run_polling()
+        print("Бот запущен...")
+        app.run_polling()
 
+    except Exception as e:
+        print("🛑 ОШИБКА ПРИ ЗАПУСКЕ БОТА:")
+        print(str(e))
 if __name__ == "__main__":
     main()
