@@ -6,9 +6,13 @@ import asyncio
 import pandas as pd
 from datetime import datetime
 import matplotlib.pyplot as plt  # Перенесено в основной блок импортов
+from ta import momentum
+import ta
+from ta.trend import EMAIndicator
+from ta.volatility import AverageTrueRange
 
 from telegram import Update
-from telegram.ext import Application, CommandHandler, CallbackContext
+from telegram.ext import Application, CommandHandler, CallbackContext, ContextTypes
 from dotenv import load_dotenv
 from ta.momentum import RSIIndicator
 from ta.volatility import BollingerBands
@@ -28,6 +32,7 @@ class TradingConfig:
     STOP_LOSS = 0.05  # 5%
     TAKE_PROFIT = 0.10  # 10%
     TRADING_ENABLED = False  # Флаг для ручного управления
+    AUTO_TRADING = False  # Автоматическая торговля по сигналу
 
 config = TradingConfig()
 
@@ -76,6 +81,55 @@ def get_technical_indicators(symbol='BTC/USDT', timeframe='1h', limit=100):
     except Exception as e:
         logging.error(f"TECH_INDICATOR_ERROR | {symbol} | {str(e)}")
         return None
+
+def analyze_market(symbol='BTC/USDT', timeframe='1h', limit=100):
+    """Продвинутая стратегия: RSI + стакан + объёмы + BollingerBands"""
+    indicators = get_technical_indicators(symbol, timeframe, limit)
+    if not indicators:
+        return "❌ Не удалось получить индикаторы."
+
+    price = indicators['price']
+    rsi = indicators['rsi']
+    bb_upper = indicators['bb_upper']
+    bb_lower = indicators['bb_lower']
+    volume = indicators['volume']
+
+    try:
+        orderbook = binance.fetch_order_book(symbol, limit=10)
+        bids = orderbook['bids']
+        asks = orderbook['asks']
+        bid_volume = sum([b[1] for b in bids[:3]])  # ближние 3 уровня
+        ask_volume = sum([a[1] for a in asks[:3]])
+        total_bid = sum([b[1] for b in bids])
+        total_ask = sum([a[1] for a in asks])
+    except Exception as e:
+        logging.error(f"ORDERBOOK_ERROR | {symbol} | {str(e)}")
+        return "❌ Ошибка при получении стакана."
+
+    imbalance = (bid_volume - ask_volume) / max(bid_volume + ask_volume, 1)
+    position = "🔹 Цена между уровнями"
+    if price <= bb_lower:
+        position = "🟢 Цена у нижней границы BB"
+    elif price >= bb_upper:
+        position = "🔴 Цена у верхней границы BB"
+
+    signal = "🤔 Сигнал не определён"
+
+    if rsi < 35 and imbalance > 0.2 and price <= bb_lower and volume > 0:
+        signal = "📈 СИГНАЛ: ПОКУПАТЬ (RSI < 35, спрос, BB нижняя)"
+    elif rsi > 65 and imbalance < -0.2 and price >= bb_upper and volume > 0:
+        signal = "📉 СИГНАЛ: ПРОДАВАТЬ (RSI > 65, предложение, BB верхняя)"
+    else:
+        signal = "⏸ Нет условий для входа — жду сигнала"
+
+    log_msg = (
+        f"ANALYZE | {symbol} | Price={price:.2f} | RSI={rsi} | "
+        f"BB=({bb_lower:.2f}/{bb_upper:.2f}) | Pos={position} | "
+        f"Bid={bid_volume:.2f} Ask={ask_volume:.2f} | Imb={imbalance:.2f} | {signal}"
+    )
+    logging.info(log_msg)
+
+    return f"{signal}\n{position}\nRSI: {rsi:.2f}\nОбъём: {volume:.2f}"
 
 def plot_indicators(symbol='BTC/USDT', timeframe='1h', limit=100):
     """Генерация графика цен с индикаторами"""
@@ -144,6 +198,26 @@ class PositionManager:
         except Exception as e:
             logging.error(f"POSITION_ERROR | {symbol} | {str(e)}")
             return False, str(e)
+               
+def is_binance_alive():
+    """Быстрый пинг Binance — True, если соединение есть"""
+    try:
+        binance.fetch_time()
+        return True
+    except Exception:
+        return False
+
+def positions_summary():
+    """Коротко о всех открытых позициях"""
+    if not position_manager.active_positions:
+        return "Нет открытых позиций"
+    summary = []
+    for pid, pos in position_manager.active_positions.items():
+        sym   = pos['symbol']
+        amt   = pos['amount']
+        price = pos['entry_price']
+        summary.append(f"{sym}: {amt:.6f} @ {price:.2f}")
+    return "\n".join(summary)
 
 position_manager = PositionManager()
 
@@ -169,6 +243,64 @@ async def start(update: Update, context: CallbackContext):
         "/balance - Проверить баланс\n"
         "/price BTC - Курс BTC"
     )
+
+# Команда /setkey: смена API ключей с валидацией и инструкцией
+async def setkey(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user_id = update.effective_user.id
+    allowed_users = [6107092031]  # ❗ УКАЖИ СВОЙ Telegram ID
+
+    if user_id not in allowed_users:
+        await update.message.reply_text("⛔ У тебя нет прав на эту команду.")
+        return
+
+    if len(context.args) != 2:
+        await update.message.reply_text(
+            "❗ Формат команды:\n/setkey <API_KEY> <API_SECRET>\n\n"
+            "Пример:\n/setkey AbC123xYz AbC456qWe\n\n"
+            "Оба значения обязательны. Не используй пробелы внутри ключей."
+        )
+        return
+
+    api_key, api_secret = context.args
+
+    # Простая валидация: длина и символы
+    if not (10 <= len(api_key) <= 100) or not (10 <= len(api_secret) <= 100):
+        await update.message.reply_text("❗ Похоже, один из ключей слишком короткий или длинный.")
+        return
+
+    if ' ' in api_key or ' ' in api_secret:
+        await update.message.reply_text("❗ Ключи не должны содержать пробелы.")
+        return
+
+    # Обновление .env файла
+    env_path = ".env"
+
+    try:
+        with open(env_path, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+    except FileNotFoundError:
+        lines = []
+
+    def update_or_append(var, value, lines):
+        found = False
+        for i in range(len(lines)):
+            if lines[i].startswith(f"{var}="):
+                lines[i] = f"{var}={value}\n"
+                found = True
+        if not found:
+            lines.append(f"{var}={value}\n")
+
+    update_or_append("BINANCE_API_KEY", api_key, lines)
+    update_or_append("BINANCE_API_SECRET", api_secret, lines)
+
+    try:
+        with open(env_path, "w", encoding="utf-8") as f:
+            f.writelines(lines)
+        load_dotenv(override=True)
+        await update.message.reply_text("✅ Ключи успешно обновлены и применены.")
+    except Exception as e:
+        await update.message.reply_text(f"❌ Ошибка при сохранении ключей: {e}")
+
 
 async def price(update: Update, context: CallbackContext):
     """Курс криптовалюты"""
@@ -206,9 +338,197 @@ async def set_risk(update: Update, context: CallbackContext):
     
     await update.message.reply_text(msg)
 
+async def show_log(update: Update, context: CallbackContext):
+    """Команда /log — показывает последние строки из trades.log"""
+    try:
+        num_lines = int(context.args[0]) if context.args else 20
+        with open("trades.log", "r", encoding="utf-8") as file:
+            lines = file.readlines()[-num_lines:]
+            if lines:
+                output = "🧾 Последние события:\n" + "".join(lines)
+                await update.message.reply_text(f"<pre>{output}</pre>", parse_mode="HTML")
+            else:
+                await update.message.reply_text("📭 Лог пока пуст.")
+    except FileNotFoundError:
+        await update.message.reply_text("❌ Лог-файл не найден.")
+    except Exception as e:
+        await update.message.reply_text(f"❌ Ошибка при чтении лога: {e}")
+
+async def trading_status_full(update: Update, context: CallbackContext):
+    """Развёрнутый статус бота и соединения"""
+    api_status   = "🟢 Онлайн" if is_binance_alive() else "🔴 Оффлайн"
+    trade_status = "🟢 АКТИВЕН" if config.TRADING_ENABLED else "🔴 ВЫКЛЮЧЕН"
+    open_pos     = positions_summary()
+    balance      = get_binance_balance()
+
+    msg = (
+        f"📡 Binance API: {api_status}\n"
+        f"📈 Статус торговли: {trade_status}\n"
+        f"🔒 Риск на сделку: {config.RISK_PER_TRADE*100:.2f}%\n"
+        f"🎯 Лимит сделок: {len(position_manager.active_positions)}/{config.MAX_TRADES_PER_DAY}\n"
+        f"💰 Баланс: {balance['USDT']:.2f} USDT\n"
+        f"🛒 Открытые позиции:\n{open_pos}"
+    )
+    await update.message.reply_text(msg)
+
 async def analyze(update: Update, context: CallbackContext):
-    """Заглушка для команды /analyze"""
-    await update.message.reply_text("🔍 Анализ пока не реализован. Ожидайте обновлений!")
+    """Команда /analyze — продвинутый анализ сигнала"""
+    try:
+        symbol = context.args[0].upper() + "/USDT" if context.args else "BTC/USDT"
+        result = analyze_market_smart(symbol)
+        await update.message.reply_text(result)
+    except Exception as e:
+        await update.message.reply_text(f"❌ Ошибка в анализе: {str(e)}")
+
+async def auto_trade_if_signal(symbol='BTC/USDT'):
+    """Фоновая задача — проверка сигнала и открытие позиции"""
+    if not config.TRADING_ENABLED:
+        return
+
+    signal_text = analyze_market(symbol)
+    logging.info(f"AUTO_TRADE_CHECK | {symbol} | {signal_text}")
+
+    # Примитивная проверка сигнала по ключевым словам
+    if "ПОКУПАТЬ" in signal_text:
+        try:
+            result, detail = await position_manager.open_position(symbol, amount=1.0)
+            msg = "✅ Открыта позиция: ПОКУПКА" if result else f"❌ Ошибка: {detail}"
+        except Exception as e:
+            msg = f"❌ Ошибка при покупке: {str(e)}"
+        logging.info(f"AUTO_TRADE_BUY | {msg}")
+
+    elif "ПРОДАВАТЬ" in signal_text:
+        # Здесь пока не реализована продажа — можно позже расширить
+        logging.info("AUTO_TRADE_SELL | ⚠ Пропущено — логика продажи не реализована.")
+
+    else:
+        logging.info("AUTO_TRADE_SKIP | Нет сигнала для входа.")
+
+async def pause_trading(update: Update, context: CallbackContext):
+    """Команда /pause — отключает торговлю"""
+    config.TRADING_ENABLED = False
+    logging.info("CONFIG | TRADING PAUSED")
+    await update.message.reply_text("⛔ Торговля приостановлена.")
+
+async def resume_trading(update: Update, context: CallbackContext):
+    """Команда /resume — включает торговлю"""
+    config.TRADING_ENABLED = True
+    logging.info("CONFIG | TRADING RESUMED")
+    await update.message.reply_text("🟢 Торговля активирована.")
+
+def get_technical_indicators(symbol: str, timeframe: str, limit: int):
+    try:
+        ohlcv = binance.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+        df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+        df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
+
+        indicators = {}
+
+        # Текущие значения
+        indicators['price'] = df['close'].iloc[-1]
+        indicators['rsi'] = ta.momentum.RSIIndicator(df['close'], window=14).rsi().iloc[-1]
+
+        bb = ta.volatility.BollingerBands(df['close'], window=20, window_dev=2)
+        indicators['bb_upper'] = bb.bollinger_hband().iloc[-1]
+        indicators['bb_lower'] = bb.bollinger_lband().iloc[-1]
+
+        indicators['volume'] = df['volume'].iloc[-1]
+
+        # 🔄 Новое: EMA и ATR
+        indicators['ema'] = ta.trend.EMAIndicator(df['close'], window=20).ema_indicator().iloc[-1]
+        indicators['atr'] = ta.volatility.AverageTrueRange(df['high'], df['low'], df['close'], window=14).average_true_range().iloc[-1]
+
+        return indicators
+
+    except Exception as e:
+        logging.error(f"❌ INDICATOR_ERROR | {symbol} | {str(e)}")
+        return None
+
+def analyze_market_smart(symbol='BTC/USDT', timeframe='1h', limit=100):
+    """📊 Умный анализ рынка с фильтрами, доверием к сигналу и расширенными индикаторами."""
+    indicators = get_technical_indicators(symbol, timeframe, limit)
+    if not indicators:
+        return "❌ Не удалось получить индикаторы."
+
+    price = indicators['price']
+    rsi = indicators['rsi']
+    bb_upper = indicators['bb_upper']
+    bb_lower = indicators['bb_lower']
+    volume = indicators['volume']
+
+    # Расчёт дополнительных индикаторов EMA и ATR
+    try:
+        ohlcv = binance.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+        df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+        ema = ta.trend.EMAIndicator(df['close'], window=20).ema_indicator().iloc[-1]
+        atr = ta.volatility.AverageTrueRange(df['high'], df['low'], df['close'], window=14).average_true_range().iloc[-1]
+    except Exception as e:
+        logging.error(f"ADV_INDICATOR_ERROR | {symbol} | {str(e)}")
+        ema = None
+        atr = None
+
+    # Получение данных по стакану
+    try:
+        orderbook = binance.fetch_order_book(symbol, limit=10)
+        bids = orderbook['bids']
+        asks = orderbook['asks']
+        bid_volume = sum([b[1] for b in bids[:3]])
+        ask_volume = sum([a[1] for a in asks[:3]])
+        total_bid = sum([b[1] for b in bids])
+        total_ask = sum([a[1] for a in asks])
+    except Exception as e:
+        logging.error(f"ORDERBOOK_ERROR | {symbol} | {str(e)}")
+        return "❌ Ошибка при получении стакана."
+
+    imbalance = (bid_volume - ask_volume) / max(bid_volume + ask_volume, 1)
+    price_position = "🔹 Цена между уровнями"
+    if price <= bb_lower:
+        price_position = "🟢 Цена у нижней границы BB"
+    elif price >= bb_upper:
+        price_position = "🔴 Цена у верхней границы BB"
+
+    # Логика оценки доверия к сигналу
+    signal = "❕ Нет условий для входа"
+    confidence = 0
+
+    if rsi < 35:
+        confidence += 1
+    if price <= bb_lower:
+        confidence += 1
+    if imbalance > 0.2:
+        confidence += 1
+    if volume > 0:
+        confidence += 1
+    if ema and price > ema:
+        confidence += 1  # Если цена выше EMA – добавляем доверие
+    if atr and atr > 0:
+        confidence += 1  # ATR > 0 – значит есть движение, не флэт
+
+    if confidence >= 4:
+        signal = "📈 СИГНАЛ: ПОКУПАТЬ"
+    elif rsi > 65 and imbalance < -0.2 and price >= bb_upper:
+        signal = "📉 СИГНАЛ: ПРОДАВАТЬ"
+        confidence = max(confidence, 4)
+
+    confidence_stars = "★" * confidence + "☆" * (5 - confidence)
+
+    log_msg = (
+        f"🧠 ANALYZE_SMART | {symbol} | Price={price:.2f} | RSI={rsi:.2f} | "
+        f"BB=({bb_lower:.2f}/{bb_upper:.2f}) | EMA={ema:.2f if ema else 'N/A'} | "
+        f"ATR={atr:.2f if atr else 'N/A'} | Pos={price_position} | "
+        f"Bid={bid_volume:.2f} Ask={ask_volume:.2f} | Imb={imbalance:.2f} | Confidence={confidence} | {signal}"
+    )
+    logging.info(log_msg)
+
+    return (
+        f"{signal}\n"
+        f"{price_position}\n"
+        f"📉 RSI: {rsi:.2f}\n"
+        f"📊 Объём: {volume:.2f}\n"
+        f"📈 EMA: {ema:.2f if ema else 'N/A'}\n"
+        f"⚡ ATR (волатильность): {atr:.2f if atr else 'N/A'}\n"
+        f"🌟 Доверие к сигналу: {confidence_stars} ({confidence}/5)"
+    )
 
 def main():
     """Запуск бота"""
@@ -220,11 +540,29 @@ def main():
         app.add_handler(CommandHandler("start", start))
         app.add_handler(CommandHandler("balance", check_balance))
         app.add_handler(CommandHandler("price", price))
+        app.add_handler(CommandHandler("setkey", setkey))
+        app.add_handler(CommandHandler("log", show_log))
 
         # Торговые команды
         app.add_handler(CommandHandler("status", trading_status))
+        app.add_handler(CommandHandler("trading_status", trading_status_full))
         app.add_handler(CommandHandler("risk", set_risk))
         app.add_handler(CommandHandler("analyze", analyze))
+        app.add_handler(CommandHandler("pause", pause_trading))
+        app.add_handler(CommandHandler("resume", resume_trading))
+
+        # Асинхронная проверка сигналов
+        async def signal_checker():
+            while True:
+                if config.TRADING_ENABLED:
+                    result = analyze_market_smart()
+                    if "СИГНАЛ:" in result:
+                        logging.info(f"AUTO_SIGNAL | {result}")
+                        await app.bot.send_message(chat_id=CHAT_ID, text=f"📡 Обнаружен сигнал:\n\n{result}")
+                await asyncio.sleep(60)  # Проверка сигнала каждую минуту
+
+        # Запуск фоновой задачи через JobQueue (устраняет ошибку event loop)
+        app.job_queue.run_repeating(lambda _: asyncio.create_task(signal_checker()), interval=60)
 
         print("Бот запущен...")
         app.run_polling()
@@ -232,5 +570,7 @@ def main():
     except Exception as e:
         print("🛑 ОШИБКА ПРИ ЗАПУСКЕ БОТА:")
         print(str(e))
+
+
 if __name__ == "__main__":
     main()
