@@ -1,1 +1,3 @@
-# Bot_2.0 - Trading_Bot 
+# Bot2.0 Modular Edition
+
+This is a modular trading bot.

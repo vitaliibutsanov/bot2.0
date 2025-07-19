@@ -1,6 +1,2 @@
-python-telegram-bot
-ccxt
-ta
-pandas
-matplotlib
-dotenv
+python-telegram-bot==20.3
+python-dotenv
