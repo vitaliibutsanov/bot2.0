@@ -848,6 +848,9 @@ def main():
     global app
     print(">>> MAIN START")
 
+    if not TELEGRAM_TOKEN:
+        raise ValueError("❌ TELEGRAM_TOKEN не найден! Проверь .env")
+
     try:
         app = Application.builder().token(TELEGRAM_TOKEN).build()
 
@@ -865,6 +868,10 @@ def main():
         register_command(app, "pause", pause_trading, "Пауза торговли")
         register_command(app, "resume", resume_trading, "Возобновить торговлю")
         register_command(app, "auto", toggle_auto, "Включить/выключить автоторговлю")
+        register_command(app, "long", open_long, "Открыть LONG позицию")
+        register_command(app, "short", open_short, "Открыть SHORT позицию")
+        register_command(app, "positions", show_positions, "Показать открытые позиции")
+        register_command(app, "tp_sl", set_tp_sl, "Установить TP/SL")
 
         # Запуск фоновых задач через JobQueue
         app.job_queue.run_repeating(lambda _: asyncio.create_task(signal_checker()), interval=60)
@@ -874,6 +881,17 @@ def main():
         app.run_polling()
 
     except Exception as e:
-        print("❌ ОШИБКА ПРИ ЗАПУСКЕ БОТА:")
-        print(str(e))
+        logging.error(f"MAIN_ERROR: {e}", exc_info=True)
+        print(f"❌ ОШИБКА ПРИ ЗАПУСКЕ БОТА: {e}")
 
+
+if __name__ == "__main__":
+    while True:
+        try:
+            print("🚀 Запуск бота...")
+            main()
+        except Exception as e:
+            logging.error(f"BOT_CRASH | {e}", exc_info=True)
+            print(f"❌ Бот упал: {e}")
+            print("🔄 Перезапуск через 5 секунд...")
+            time.sleep(5)

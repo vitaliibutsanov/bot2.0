@@ -2,12 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Отладка бота",
-            "type": "debugpy",
+            "name": "Запуск Binance Bot",
+            "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/binance_bot.py",
             "console": "integratedTerminal",
-            "justMyCode": true
+            "justMyCode": false,
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
