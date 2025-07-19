@@ -10,6 +10,7 @@ from ta import momentum
 import ta
 from ta.trend import EMAIndicator
 from ta.volatility import AverageTrueRange
+from datetime import datetime, timedelta
 
 from telegram import Update
 from telegram.ext import Application, CommandHandler, CallbackContext, ContextTypes
@@ -25,6 +26,12 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 
+COMMANDS = []
+
+def register_command(app, command, handler, description=""):
+    app.add_handler(CommandHandler(command, handler))
+    COMMANDS.append((command, description))
+
 class TradingConfig:
     """Настройки торговли"""
     RISK_PER_TRADE = 0.02  # 2% от депозита
@@ -33,6 +40,8 @@ class TradingConfig:
     TAKE_PROFIT = 0.10  # 10%
     TRADING_ENABLED = False  # Флаг для ручного управления
     AUTO_TRADING = False  # Автоматическая торговля по сигналу
+    LOSE_STREAK = 0           # Кол-во подряд убыточных сделок
+    PAUSE_UNTIL = None        # Время окончания паузы
 
 config = TradingConfig()
 
@@ -40,7 +49,7 @@ config = TradingConfig()
 load_dotenv()
 
 # Инициализация Binance
-binance = ccxt.binance({
+binance = ccxt.binanceusdm({
     'apiKey': os.getenv('BINANCE_API_KEY'),
     'secret': os.getenv('BINANCE_API_SECRET'),
     'options': {'adjustForTimeDifference': True}
@@ -157,6 +166,100 @@ def plot_indicators(symbol='BTC/USDT', timeframe='1h', limit=100):
         logging.error(f"CHART_ERROR | {symbol} | {str(e)}")
         return None
     
+class FuturesManager:
+    """Класс для работы с фьючерсами с TP/SL и защитой от серии убытков"""
+    def __init__(self):
+        self.active_positions = {}  # Открытые позиции
+        self.loss_streak = 0        # Кол-во убыточных подряд
+        self.max_loss_streak = 3    # Сколько минусов подряд до паузы
+        self.cooldown_until = None  # Время окончания паузы (если активна)
+
+    def is_paused(self):
+        """Проверка, активна ли пауза"""
+        if self.cooldown_until and datetime.now() < self.cooldown_until:
+            return True
+        return False
+
+    async def open_position(self, symbol, side, amount, leverage=5, stop_loss=None, take_profit=None):
+        """Открыть позицию на фьючерсах"""
+        if self.is_paused():
+            return False, f"Торговля приостановлена до {self.cooldown_until.strftime('%H:%M:%S')}."
+
+        try:
+            binance.set_leverage(leverage, symbol)
+            order = binance.create_order(
+                symbol=symbol,
+                type='MARKET',
+                side=side,
+                amount=amount
+            )
+
+            entry_price = order['price'] if 'price' in order else binance.fetch_ticker(symbol)['last']
+            self.active_positions[order['id']] = {
+                'symbol': symbol,
+                'side': side,
+                'amount': amount,
+                'entry_price': entry_price,
+                'stop_loss': stop_loss,
+                'take_profit': take_profit,
+                'opened_at': datetime.now()
+            }
+
+            logging.info(f"FUTURES_OPEN | {symbol} | {side} | {amount} @ {entry_price}")
+            return True, order
+
+        except Exception as e:
+            logging.error(f"FUTURES_ERROR | {symbol} | {str(e)}")
+            return False, str(e)
+
+    async def check_positions(self):
+        """Проверка TP/SL для активных позиций"""
+        closed_positions = []
+        for pid, pos in list(self.active_positions.items()):
+            try:
+                ticker = binance.fetch_ticker(pos['symbol'])
+                price = ticker['last']
+                side = pos['side']
+
+                if pos['take_profit'] and ((side == 'BUY' and price >= pos['take_profit']) or (side == 'SELL' and price <= pos['take_profit'])):
+                    await self.close_position(pid)
+                    closed_positions.append(f"TP сработал по {pos['symbol']} @ {price:.2f}")
+                    continue
+
+                if pos['stop_loss'] and ((side == 'BUY' and price <= pos['stop_loss']) or (side == 'SELL' and price >= pos['stop_loss'])):
+                    await self.close_position(pid)
+                    self.loss_streak += 1
+                    if self.loss_streak >= self.max_loss_streak:
+                        self.cooldown_until = datetime.now() + timedelta(hours=6)
+                        logging.warning(f"PAUSE | Торговля приостановлена на 6 часов из-за 3 убытков подряд.")
+                    closed_positions.append(f"SL сработал по {pos['symbol']} @ {price:.2f}")
+                    continue
+
+            except Exception as e:
+                logging.error(f"CHECK_POSITION_ERROR | {pid} | {str(e)}")
+
+        return closed_positions
+
+    async def close_position(self, position_id):
+        """Закрыть позицию"""
+        try:
+            pos = self.active_positions.get(position_id)
+            if not pos:
+                return False, "Позиция не найдена."
+
+            side = 'SELL' if pos['side'] == 'BUY' else 'BUY'
+            binance.create_order(
+                symbol=pos['symbol'],
+                type='MARKET',
+                side=side,
+                amount=pos['amount']
+            )
+
+            logging.info(f"FUTURES_CLOSE | {pos['symbol']} | {pos['side']} | {pos['amount']}")
+            del self.active_positions[position_id]
+            return True, "Позиция закрыта."
+        except Exception as e:
+            return False, str(e)
 
 class PositionManager:
     """Класс для управления торговыми позициями"""
@@ -220,6 +323,7 @@ def positions_summary():
     return "\n".join(summary)
 
 position_manager = PositionManager()
+futures_manager = FuturesManager()
 
 async def check_balance(update: Update, context: CallbackContext):
     """Обработчик команды /balance"""
@@ -445,7 +549,7 @@ def get_technical_indicators(symbol: str, timeframe: str, limit: int):
         return None
 
 def analyze_market_smart(symbol='BTC/USDT', timeframe='1h', limit=100):
-    """📊 Умный анализ рынка с фильтрами, доверием к сигналу и расширенными индикаторами."""
+    """📊 Расширенный анализ рынка с системой фильтров и доверием к сигналу"""
     indicators = get_technical_indicators(symbol, timeframe, limit)
     if not indicators:
         return "❌ Не удалось получить индикаторы."
@@ -454,31 +558,24 @@ def analyze_market_smart(symbol='BTC/USDT', timeframe='1h', limit=100):
     rsi = indicators['rsi']
     bb_upper = indicators['bb_upper']
     bb_lower = indicators['bb_lower']
+    ema = indicators.get('ema', None)
+    atr = indicators.get('atr', None)
     volume = indicators['volume']
 
-    # Расчёт дополнительных индикаторов EMA и ATR
-    try:
-        ohlcv = binance.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
-        df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
-        ema = ta.trend.EMAIndicator(df['close'], window=20).ema_indicator().iloc[-1]
-        atr = ta.volatility.AverageTrueRange(df['high'], df['low'], df['close'], window=14).average_true_range().iloc[-1]
-    except Exception as e:
-        logging.error(f"ADV_INDICATOR_ERROR | {symbol} | {str(e)}")
-        ema = None
-        atr = None
+    # Преобразуем данные в текст (если None → N/A)
+    ema_text = f"{ema:.2f}" if ema is not None else "N/A"
+    atr_text = f"{atr:.2f}" if atr is not None else "N/A"
+    volume_text = f"{volume:.2f}" if volume is not None else "N/A"
 
-    # Получение данных по стакану
     try:
         orderbook = binance.fetch_order_book(symbol, limit=10)
         bids = orderbook['bids']
         asks = orderbook['asks']
         bid_volume = sum([b[1] for b in bids[:3]])
         ask_volume = sum([a[1] for a in asks[:3]])
-        total_bid = sum([b[1] for b in bids])
-        total_ask = sum([a[1] for a in asks])
     except Exception as e:
         logging.error(f"ORDERBOOK_ERROR | {symbol} | {str(e)}")
-        return "❌ Ошибка при получении стакана."
+        return f"❌ Ошибка при получении стакана."
 
     imbalance = (bid_volume - ask_volume) / max(bid_volume + ask_volume, 1)
     price_position = "🔹 Цена между уровнями"
@@ -487,9 +584,9 @@ def analyze_market_smart(symbol='BTC/USDT', timeframe='1h', limit=100):
     elif price >= bb_upper:
         price_position = "🔴 Цена у верхней границы BB"
 
-    # Логика оценки доверия к сигналу
+    # ↓↓↓ Логика оценки доверия к сигналу ↓↓↓
     signal = "❕ Нет условий для входа"
-    confidence = 0
+    confidence = 0  # уровень доверия к сигналу
 
     if rsi < 35:
         confidence += 1
@@ -499,23 +596,19 @@ def analyze_market_smart(symbol='BTC/USDT', timeframe='1h', limit=100):
         confidence += 1
     if volume > 0:
         confidence += 1
-    if ema and price > ema:
-        confidence += 1  # Если цена выше EMA – добавляем доверие
-    if atr and atr > 0:
-        confidence += 1  # ATR > 0 – значит есть движение, не флэт
+    if ema is not None and price > ema:
+        confidence += 1
+    if atr is not None and atr > 0:
+        confidence += 1
 
-    if confidence >= 4:
+    if confidence >= 4 and rsi < 35:
         signal = "📈 СИГНАЛ: ПОКУПАТЬ"
-    elif rsi > 65 and imbalance < -0.2 and price >= bb_upper:
+    elif confidence >= 4 and rsi > 65:
         signal = "📉 СИГНАЛ: ПРОДАВАТЬ"
-        confidence = max(confidence, 4)
-
-    confidence_stars = "★" * confidence + "☆" * (5 - confidence)
 
     log_msg = (
         f"🧠 ANALYZE_SMART | {symbol} | Price={price:.2f} | RSI={rsi:.2f} | "
-        f"BB=({bb_lower:.2f}/{bb_upper:.2f}) | EMA={ema:.2f if ema else 'N/A'} | "
-        f"ATR={atr:.2f if atr else 'N/A'} | Pos={price_position} | "
+        f"BB=({bb_lower:.2f}/{bb_upper:.2f}) | EMA={ema_text} | ATR={atr_text} | "
         f"Bid={bid_volume:.2f} Ask={ask_volume:.2f} | Imb={imbalance:.2f} | Confidence={confidence} | {signal}"
     )
     logging.info(log_msg)
@@ -524,53 +617,263 @@ def analyze_market_smart(symbol='BTC/USDT', timeframe='1h', limit=100):
         f"{signal}\n"
         f"{price_position}\n"
         f"📉 RSI: {rsi:.2f}\n"
-        f"📊 Объём: {volume:.2f}\n"
-        f"📈 EMA: {ema:.2f if ema else 'N/A'}\n"
-        f"⚡ ATR (волатильность): {atr:.2f if atr else 'N/A'}\n"
-        f"🌟 Доверие к сигналу: {confidence_stars} ({confidence}/5)"
+        f"📏 EMA: {ema_text}\n"
+        f"⚡ ATR: {atr_text}\n"
+        f"📊 Объём: {volume_text}\n"
+        f"🌟 Доверие к сигналу: {confidence}/6"
     )
+
+async def open_long(update: Update, context: CallbackContext):
+    """Открытие LONG позиции на фьючерсах"""
+    try:
+        if len(context.args) < 1:
+            await update.message.reply_text("❗ Использование: /long <AMOUNT> [LEVERAGE]")
+            return
+
+        amount = float(context.args[0])
+        leverage = int(context.args[1]) if len(context.args) > 1 else 5
+
+        success, result = await futures_manager.open_position(
+            symbol="BTC/USDT", side="BUY", amount=amount, leverage=leverage
+        )
+        if success:
+            await update.message.reply_text(f"✅ LONG открыт: {result}")
+        else:
+            await update.message.reply_text(f"❌ Ошибка: {result}")
+
+    except Exception as e:
+        await update.message.reply_text(f"❌ Ошибка: {str(e)}")
+
+async def open_short(update: Update, context: CallbackContext):
+    """Открытие SHORT позиции на фьючерсах"""
+    try:
+        if len(context.args) < 1:
+            await update.message.reply_text("❗ Использование: /short <AMOUNT> [LEVERAGE]")
+            return
+
+        amount = float(context.args[0])
+        leverage = int(context.args[1]) if len(context.args) > 1 else 5
+
+        success, result = await futures_manager.open_position(
+            symbol="BTC/USDT", side="SELL", amount=amount, leverage=leverage
+        )
+        if success:
+            await update.message.reply_text(f"✅ SHORT открыт: {result}")
+        else:
+            await update.message.reply_text(f"❌ Ошибка: {result}")
+
+    except Exception as e:
+        await update.message.reply_text(f"❌ Ошибка: {str(e)}")
+
+async def show_positions(update: Update, context: CallbackContext):
+    """Показать открытые фьючерсные позиции"""
+    if not futures_manager.active_positions:
+        await update.message.reply_text("📭 Открытых позиций нет.")
+        return
+
+    text = "📌 *Открытые позиции:*\n"
+    for pid, pos in futures_manager.active_positions.items():
+        text += f"- {pos['symbol']} | {pos['side']} | {pos['amount']} @ {pos['entry_price']}\n"
+
+    await update.message.reply_text(text, parse_mode="Markdown")
+
+async def set_tp_sl(update: Update, context: CallbackContext):
+    """Установить TP и SL для всех открытых позиций"""
+    try:
+        if len(context.args) < 2:
+            await update.message.reply_text("❗ Использование: /tp_sl <TP%> <SL%>\nНапример: /tp_sl 5 2")
+            return
+
+        tp_percent = float(context.args[0]) / 100
+        sl_percent = float(context.args[1]) / 100
+
+        if not futures_manager.active_positions:
+            await update.message.reply_text("📭 Нет активных позиций для установки TP/SL.")
+            return
+
+        for pid, pos in futures_manager.active_positions.items():
+            entry_price = pos['entry_price']
+            if pos['side'] == "BUY":
+                pos['take_profit'] = entry_price * (1 + tp_percent)
+                pos['stop_loss'] = entry_price * (1 - sl_percent)
+            else:
+                pos['take_profit'] = entry_price * (1 - tp_percent)
+                pos['stop_loss'] = entry_price * (1 + sl_percent)
+
+        await update.message.reply_text(
+            f"✅ TP = {tp_percent*100:.1f}%, SL = {sl_percent*100:.1f}% установлены для всех позиций."
+        )
+        logging.info(f"TP_SL_SET | TP={tp_percent} | SL={sl_percent}")
+
+    except Exception as e:
+        await update.message.reply_text(f"❌ Ошибка: {str(e)}")
+
+async def toggle_auto(update: Update, context: CallbackContext):
+    """Переключить авто-режим торговли"""
+    config.AUTO_TRADING = not getattr(config, "AUTO_TRADING", False)
+    state = "🟢 Авто-режим включён" if config.AUTO_TRADING else "🔴 Авто-режим выключен"
+    await update.message.reply_text(state)
+    logging.info(f"AUTO_TRADING | {state}")
+
+from datetime import datetime, timedelta
+
+from datetime import datetime, timedelta
+
+async def update_trade_result(profit: float, app):
+    """
+    Обновляет состояние бота после сделки.
+    :param profit: прибыль (если отрицательная — убыток).
+    :param app: объект Telegram приложения.
+    """
+    if profit < 0:
+        config.LOSE_STREAK += 1
+        logging.info(f"LOSE STREAK: {config.LOSE_STREAK}")
+        if config.LOSE_STREAK >= 3:
+            config.TRADING_ENABLED = False
+            config.PAUSE_UNTIL = datetime.utcnow() + timedelta(hours=6)
+            await app.bot.send_message(
+                chat_id=CHAT_ID,
+                text="⏸ Торговля остановлена на 6 часов (3 убыточные сделки подряд)."
+            )
+    else:
+        config.LOSE_STREAK = 0
+
+# Асинхронная проверка сигналов
+async def signal_checker():
+    while True:
+        try:
+            if config.TRADING_ENABLED or getattr(config, "AUTO_TRADING", False):
+                result = analyze_market_smart()
+                if "СИГНАЛ:" in result:
+                    logging.info(f"AUTO_SIGNAL | {result}")
+                    await app.bot.send_message(chat_id=CHAT_ID, text=f"📡 Обнаружен сигнал:\n\n{result}")
+
+                    # Автоторговля
+                    if getattr(config, "AUTO_TRADING", False):
+                        side = "BUY" if "ПОКУПАТЬ" in result else "SELL"
+                        usdt_balance = binance.fetch_balance()['USDT']['free']
+                        amount = usdt_balance * config.RISK_PER_TRADE
+                        success, response = await futures_manager.open_position(
+                            symbol="BTC/USDT", side=side, amount=amount
+                        )
+                        if success:
+                            await app.bot.send_message(chat_id=CHAT_ID, text=f"🤖 Автоматически открыт {side} на {amount:.2f} USDT.")
+                        else:
+                            await app.bot.send_message(chat_id=CHAT_ID, text=f"⚠️ Ошибка при открытии позиции: {response}")
+        except Exception as e:
+            logging.error(f"signal_checker ERROR: {e}")
+            await app.bot.send_message(chat_id=CHAT_ID, text=f"❌ Ошибка в signal_checker: {e}")
+
+        await asyncio.sleep(60)  # Проверка сигнала каждую минуту
+
+
+# Проверка закрытых позиций
+async def positions_watcher():
+    while True:
+        try:
+            closed = await futures_manager.check_positions()
+            if closed:
+                for msg in closed:
+                    await app.bot.send_message(chat_id=CHAT_ID, text=f"🔔 {msg}")
+        except Exception as e:
+            logging.error(f"positions_watcher ERROR: {e}")
+        await asyncio.sleep(60)
+
+async def trading_status_full(update: Update, context: CallbackContext):
+    """Показывает расширенный статус с последними сигналами"""
+    try:
+        balance = binance.fetch_balance()
+        usdt = balance['USDT']['free']
+        btc = balance['BTC']['free']
+
+        # Получаем последние 3 записи из лога сигналов
+        recent_signals = []
+        try:
+            with open('trades.log', 'r', encoding='utf-8') as log_file:
+                lines = log_file.readlines()
+                recent_signals = lines[-3:] if len(lines) >= 3 else lines
+        except FileNotFoundError:
+            recent_signals = ["Лог-файл отсутствует."]
+
+        status_lines = [
+            "📊 *РАСШИРЕННЫЙ СТАТУС*",
+            "━━━━━━━━━━━━━━━━━━━━━━━",
+            f"🤖 *Авто-режим:* {'🟢 Включён' if config.AUTO_TRADING else '🔴 Выключен'}",
+            f"🔐 *Риск на сделку:* {config.RISK_PER_TRADE * 100:.1f}%",
+            f"⚡ *Сделок подряд в минус:* {config.LOSE_STREAK}/3",
+            f"⏳ *Пауза до:* {config.PAUSE_UNTIL.strftime('%Y-%m-%d %H:%M:%S') if config.PAUSE_UNTIL else '—'}",
+            "━━━━━━━━━━━━━━━━━━━━━━━",
+            f"💰 *Баланс USDT:* {usdt:.2f}",
+            f"💰 *Баланс BTC:* {btc:.6f}",
+            "━━━━━━━━━━━━━━━━━━━━━━━",
+            "📈 *Последние сигналы:*",
+        ] + [f"• {line.strip()}" for line in recent_signals]
+
+        await update.message.reply_text("\n".join(status_lines), parse_mode="Markdown")
+    except Exception as e:
+        logging.error(f"STATUS_FULL_ERROR: {str(e)}")
+        await update.message.reply_text(f"❌ Ошибка при получении расширенного статуса: {str(e)}")
+
+# Команда /help
+async def show_help(update: Update, context: CallbackContext):
+    """
+    Показывает список доступных команд с описанием.
+    """
+    help_text = "📖 <b>Доступные команды:</b>\n\n"
+
+    # Группы команд
+    main_commands = []
+    trading_commands = []
+    system_commands = []
+
+    for cmd, desc in COMMANDS:
+        if cmd in ["start", "balance", "price", "setkey"]:
+            main_commands.append(f"/{cmd} — {desc}")
+        elif cmd in ["analyze", "risk", "pause", "resume", "auto", "trading_status", "status"]:
+            trading_commands.append(f"/{cmd} — {desc}")
+        else:
+            system_commands.append(f"/{cmd} — {desc}")
+
+    if main_commands:
+        help_text += "🔹 <b>Основные:</b>\n" + "\n".join(main_commands) + "\n\n"
+    if trading_commands:
+        help_text += "💹 <b>Торговля:</b>\n" + "\n".join(trading_commands) + "\n\n"
+    if system_commands:
+        help_text += "⚙ <b>Системные:</b>\n" + "\n".join(system_commands)
+
+    await update.message.reply_text(help_text, parse_mode="HTML")
 
 def main():
     """Запуск бота"""
+    global app
     print(">>> MAIN START")
+
     try:
         app = Application.builder().token(TELEGRAM_TOKEN).build()
 
-        # Основные команды
-        app.add_handler(CommandHandler("start", start))
-        app.add_handler(CommandHandler("balance", check_balance))
-        app.add_handler(CommandHandler("price", price))
-        app.add_handler(CommandHandler("setkey", setkey))
-        app.add_handler(CommandHandler("log", show_log))
+        # Регистрация команд через register_command
+        register_command(app, "start", start, "Запустить бота")
+        register_command(app, "balance", check_balance, "Проверить баланс")
+        register_command(app, "price", price, "Курс BTC")
+        register_command(app, "setkey", setkey, "Установить API ключ")
+        register_command(app, "log", show_log, "Показать логи")
+        register_command(app, "status", trading_status, "Краткий статус")
+        register_command(app, "trading_status", trading_status_full, "Полный статус торговли")
+        register_command(app, "help", show_help, "Список команд")
+        register_command(app, "risk", set_risk, "Изменить риск (%)")
+        register_command(app, "analyze", analyze, "Анализ рынка")
+        register_command(app, "pause", pause_trading, "Пауза торговли")
+        register_command(app, "resume", resume_trading, "Возобновить торговлю")
+        register_command(app, "auto", toggle_auto, "Включить/выключить автоторговлю")
 
-        # Торговые команды
-        app.add_handler(CommandHandler("status", trading_status))
-        app.add_handler(CommandHandler("trading_status", trading_status_full))
-        app.add_handler(CommandHandler("risk", set_risk))
-        app.add_handler(CommandHandler("analyze", analyze))
-        app.add_handler(CommandHandler("pause", pause_trading))
-        app.add_handler(CommandHandler("resume", resume_trading))
-
-        # Асинхронная проверка сигналов
-        async def signal_checker():
-            while True:
-                if config.TRADING_ENABLED:
-                    result = analyze_market_smart()
-                    if "СИГНАЛ:" in result:
-                        logging.info(f"AUTO_SIGNAL | {result}")
-                        await app.bot.send_message(chat_id=CHAT_ID, text=f"📡 Обнаружен сигнал:\n\n{result}")
-                await asyncio.sleep(60)  # Проверка сигнала каждую минуту
-
-        # Запуск фоновой задачи через JobQueue (устраняет ошибку event loop)
+        # Запуск фоновых задач через JobQueue
         app.job_queue.run_repeating(lambda _: asyncio.create_task(signal_checker()), interval=60)
+        app.job_queue.run_repeating(lambda _: asyncio.create_task(positions_watcher()), interval=60)
 
         print("Бот запущен...")
         app.run_polling()
 
     except Exception as e:
-        print("🛑 ОШИБКА ПРИ ЗАПУСКЕ БОТА:")
+        print("❌ ОШИБКА ПРИ ЗАПУСКЕ БОТА:")
         print(str(e))
 
-
-if __name__ == "__main__":
-    main()

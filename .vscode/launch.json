@@ -3,11 +3,11 @@
     "configurations": [
         {
             "name": "Python: Отладка бота",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
-            "program": "${file}",
+            "program": "${workspaceFolder}/binance_bot.py",
             "console": "integratedTerminal",
-            "envFile": "${workspaceFolder}/.env"
+            "justMyCode": true
         }
     ]
 }
