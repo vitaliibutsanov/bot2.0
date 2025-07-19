@@ -1447,3 +1447,348 @@
 2025-07-19 03:16:39 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:16:39 UTC)" skipped: maximum number of running instances reached (1)
 2025-07-19 03:17:39 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:17:39 UTC)" skipped: maximum number of running instances reached (1)
 2025-07-19 03:17:39 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:17:39 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:39:18 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-19 03:39:18 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-19 03:39:18 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
+2025-07-19 03:39:18 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-19 03:39:18 | INFO | Added job "<lambda>" to job store "default"
+2025-07-19 03:39:18 | INFO | Added job "<lambda>" to job store "default"
+2025-07-19 03:39:18 | INFO | Scheduler started
+2025-07-19 03:39:18 | INFO | Application started
+2025-07-19 03:39:19 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:39:19 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-19 03:39:19 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-19 03:39:21 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-19 03:39:29 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:39:39 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:39:49 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:39:59 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:40:09 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:40:18 | INFO | Running job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:41:18 UTC)" (scheduled at 2025-07-19 01:40:18.788087+00:00)
+2025-07-19 03:40:18 | INFO | Running job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:41:18 UTC)" (scheduled at 2025-07-19 01:40:18.788709+00:00)
+2025-07-19 03:40:19 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:40:29 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:40:39 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:40:49 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:40:59 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:41:09 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:41:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:41:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:41:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:41:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:41:19 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:41:29 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:41:39 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:41:49 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:41:59 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:42:09 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:42:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:42:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:42:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:42:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:42:20 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:42:30 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:42:40 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:42:50 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:43:00 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:43:10 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:43:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:43:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:43:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:43:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:43:20 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:43:30 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:43:40 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:43:50 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:44:00 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:44:10 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:44:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:44:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:44:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:44:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:44:20 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:44:30 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:44:40 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:44:50 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:45:00 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:45:10 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:45:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:45:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:45:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:45:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:45:20 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:45:30 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:45:40 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:45:50 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:46:00 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:46:10 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:46:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:46:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:46:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:46:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:46:21 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:46:31 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:46:41 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:46:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:47:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:47:11 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:47:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:47:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:47:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:47:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:47:21 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:47:31 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:47:41 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:47:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:48:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:48:11 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:48:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:48:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:48:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:48:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:48:21 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:48:31 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:48:41 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:48:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:49:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:49:11 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:49:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:49:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:49:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:49:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:49:21 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:49:31 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:49:41 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:49:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:50:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:50:12 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:50:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:50:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:50:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:50:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:50:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:50:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:50:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:50:52 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:51:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:51:12 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:51:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:51:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:51:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:51:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:51:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:51:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:51:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:51:52 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:52:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:52:12 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:52:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:52:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:52:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:52:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:52:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:52:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:52:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:52:52 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:53:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:53:12 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:53:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:53:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:53:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:53:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:53:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:53:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:53:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:53:52 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:54:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:54:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:54:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:54:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:54:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:54:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:54:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:54:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:54:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:54:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:55:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:55:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:55:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:55:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:55:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:55:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:55:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:55:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:55:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:55:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:56:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:56:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:56:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:56:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:56:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:56:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:56:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:56:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:56:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:56:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:57:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:57:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:57:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:57:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:57:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:57:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:57:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:57:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:57:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:57:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:58:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:58:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:58:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:58:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:58:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:58:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:58:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:58:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:58:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:58:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:59:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:59:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:59:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:59:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:59:18 | WARNING | Execution of job "<lambda> (trigger: interval[0:01:00], next run at: 2025-07-19 01:59:18 UTC)" skipped: maximum number of running instances reached (1)
+2025-07-19 03:59:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:59:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:59:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:59:54 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-19 03:59:54 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-19 03:59:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 03:59:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
+2025-07-19 03:59:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-19 03:59:54 | INFO | Added job "<lambda>" to job store "default"
+2025-07-19 03:59:54 | INFO | Added job "<lambda>" to job store "default"
+2025-07-19 03:59:54 | INFO | Scheduler started
+2025-07-19 03:59:54 | INFO | Application started
+2025-07-19 03:59:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 409 Conflict"
+2025-07-19 03:59:54 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 669, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4610, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 697, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 726, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 374, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-19 03:59:58 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 409 Conflict"
+2025-07-19 03:59:58 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 669, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4610, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 697, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 726, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 374, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-19 03:59:59 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 409 Conflict"
+2025-07-19 03:59:59 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 669, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4610, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 697, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 726, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 374, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
