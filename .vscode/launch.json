@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Запуск Binance Bot",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/binance_bot.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
