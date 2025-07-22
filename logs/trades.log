@@ -1,0 +1,571 @@
+2025-07-21 22:02:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
+2025-07-21 22:02:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-21 22:02:22 | INFO | Application started
+2025-07-21 22:02:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:02:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:02:52 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:03:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:03:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:03:13 | INFO | ANALYZE_SMART | BTC/USDT | Price=116790.89 | RSI=44.93 | BB=(116678.65/116897.23) | EMA=117934.40 | ATR=15975.00 | Bid=0.51 Ask=0.23 | Conf=2 | \u2755 Нет условий для входа
+2025-07-21 22:03:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:03:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:03:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:03:21 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:03:21 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:03:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:03:24 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:03:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:03:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:03:26 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
+    await coroutine
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
+    return await self.callback(update, context)
+  File "E:\bot\telegram_bot\handlers.py", line 23, in price
+    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
+AttributeError: 'TradingConfig' object has no attribute 'binance'
+2025-07-21 22:03:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:03:33 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
+    await coroutine
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
+    return await self.callback(update, context)
+  File "E:\bot\telegram_bot\handlers.py", line 23, in price
+    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
+AttributeError: 'TradingConfig' object has no attribute 'binance'
+2025-07-21 22:03:40 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:03:40 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:03:42 | INFO | ANALYZE_SMART | BTC/USDT | Price=116787.74 | RSI=44.71 | BB=(116678.50/116897.07) | EMA=117934.10 | ATR=15975.00 | Bid=0.51 Ask=0.18 | Conf=2 | \u2755 Нет условий для входа
+2025-07-21 22:03:42 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:03:50 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:04:00 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:04:09 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:04:09 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
+    await coroutine
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
+    return await self.callback(update, context)
+  File "E:\bot\telegram_bot\handlers.py", line 23, in price
+    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
+AttributeError: 'TradingConfig' object has no attribute 'binance'
+2025-07-21 22:04:19 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:04:29 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:04:39 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:04:43 | INFO | ANALYZE_SMART | BTC/USDT | Price=116735.88 | RSI=41.08 | BB=(116682.23/116876.40) | EMA=117929.17 | ATR=15975.00 | Bid=0.37 Ask=0.36 | Conf=1 | \u2755 Нет условий для входа
+2025-07-21 22:04:44 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:04:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:04:44 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
+    await coroutine
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
+    return await self.callback(update, context)
+  File "E:\bot\telegram_bot\handlers.py", line 23, in price
+    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
+AttributeError: 'TradingConfig' object has no attribute 'binance'
+2025-07-21 22:04:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:05:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:05:09 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:05:09 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
+    await coroutine
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
+    return await self.callback(update, context)
+  File "E:\bot\telegram_bot\handlers.py", line 23, in price
+    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
+AttributeError: 'TradingConfig' object has no attribute 'binance'
+2025-07-21 22:05:19 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:05:29 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:05:39 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:05:45 | INFO | ANALYZE_SMART | BTC/USDT | Price=116766.00 | RSI=43.61 | BB=(116682.81/116869.10) | EMA=117932.03 | ATR=15975.00 | Bid=0.16 Ask=0.55 | Conf=1 | \u2755 Нет условий для входа
+2025-07-21 22:05:46 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:05:49 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:05:59 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:06:09 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:06:19 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:06:29 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:06:39 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:06:47 | INFO | ANALYZE_SMART | BTC/USDT | Price=116723.33 | RSI=39.99 | BB=(116673.58/116870.09) | EMA=117927.97 | ATR=15975.00 | Bid=0.25 Ask=0.22 | Conf=1 | \u2755 Нет условий для входа
+2025-07-21 22:06:48 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:06:49 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:06:59 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:07:09 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:07:19 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:07:29 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:07:39 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:07:50 | INFO | ANALYZE_SMART | BTC/USDT | Price=116730.86 | RSI=40.97 | BB=(116677.70/116868.51) | EMA=117928.69 | ATR=15975.00 | Bid=0.21 Ask=0.20 | Conf=1 | \u2755 Нет условий для входа
+2025-07-21 22:07:50 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:07:50 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:08:00 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:08:11 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:08:21 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:08:31 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:08:41 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:08:53 | INFO | ANALYZE_SMART | BTC/USDT | Price=116810.34 | RSI=49.04 | BB=(116697.00/116865.71) | EMA=117936.26 | ATR=15975.43 | Bid=0.24 Ask=0.22 | Conf=1 | \u2755 Нет условий для входа
+2025-07-21 22:08:53 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:08:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:09:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:09:06 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:09:06 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
+    await coroutine
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
+    return await self.callback(update, context)
+  File "E:\bot\telegram_bot\handlers.py", line 23, in price
+    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
+AttributeError: 'TradingConfig' object has no attribute 'binance'
+2025-07-21 22:09:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:09:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:09:26 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
+    await coroutine
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
+    return await self.callback(update, context)
+  File "E:\bot\telegram_bot\handlers.py", line 23, in price
+    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
+AttributeError: 'TradingConfig' object has no attribute 'binance'
+2025-07-21 22:09:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:09:46 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:09:52 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:09:52 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
+    await coroutine
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
+    return await self.callback(update, context)
+  File "E:\bot\telegram_bot\handlers.py", line 23, in price
+    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
+AttributeError: 'TradingConfig' object has no attribute 'binance'
+2025-07-21 22:09:55 | INFO | ANALYZE_SMART | BTC/USDT | Price=116866.02 | RSI=54.26 | BB=(116693.29/116877.48) | EMA=117941.56 | ATR=15979.41 | Bid=0.16 Ask=0.26 | Conf=1 | \u2755 Нет условий для входа
+2025-07-21 22:09:55 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:10:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:10:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:10:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:10:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:10:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:10:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:10:56 | INFO | ANALYZE_SMART | BTC/USDT | Price=116871.01 | RSI=54.67 | BB=(116689.84/116888.56) | EMA=117942.03 | ATR=15980.06 | Bid=0.13 Ask=0.21 | Conf=1 | \u2755 Нет условий для входа
+2025-07-21 22:10:58 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:11:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:11:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:11:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:11:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:11:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:11:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:11:59 | INFO | ANALYZE_SMART | BTC/USDT | Price=116865.15 | RSI=53.97 | BB=(116688.31/116897.99) | EMA=117941.48 | ATR=15980.06 | Bid=0.21 Ask=0.21 | Conf=1 | \u2755 Нет условий для входа
+2025-07-21 22:12:00 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:12:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:12:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:12:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:12:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:12:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:12:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:13:02 | INFO | ANALYZE_SMART | BTC/USDT | Price=116859.04 | RSI=53.11 | BB=(116686.62/116904.35) | EMA=117940.89 | ATR=15980.06 | Bid=0.20 Ask=0.19 | Conf=1 | \u2755 Нет условий для входа
+2025-07-21 22:13:03 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:13:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:13:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:13:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:13:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:13:32 | INFO | Application is stopping. This might take a moment.
+2025-07-21 22:13:32 | INFO | Application.stop() complete
+2025-07-21 22:13:32 | ERROR | Task was destroyed but it is pending!
+task: <Task pending name='Task-38' coro=<auto_trade_cycle() running at E:\bot\core\auto_trader.py:60> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2025-07-21 22:13:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
+2025-07-21 22:13:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-21 22:13:43 | INFO | Application started
+2025-07-21 22:13:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:14:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:14:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:14:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:14:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:14:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:14:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:15:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:15:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:15:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:15:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:15:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:15:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:15:55 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:15:55 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:15:56 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:15:57 | INFO | ANALYZE_SMART | BTC/USDT | Price=116980.00 | RSI=64.11 | BB=(116663.75/116953.65) | EMA=117952.41 | ATR=15987.55 | Bid=0.52 Ask=0.17 | Conf=2 | \u2755 Нет условий для входа
+2025-07-21 22:15:58 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:16:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:16:05 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:16:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:16:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:16:35 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:16:38 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:16:38 | ERROR | PRICE_COMMAND_ERROR: too many values to unpack (expected 2)
+2025-07-21 22:16:38 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:16:48 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:16:58 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:16:59 | INFO | ANALYZE_SMART | BTC/USDT | Price=117043.92 | RSI=68.65 | BB=(116640.55/117002.97) | EMA=117958.50 | ATR=15992.12 | Bid=0.23 Ask=0.19 | Conf=1 | \u2755 Нет условий для входа
+2025-07-21 22:17:00 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:17:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:17:04 | ERROR | PRICE_COMMAND_ERROR: too many values to unpack (expected 2)
+2025-07-21 22:17:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:17:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:17:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:17:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:17:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:17:55 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:18:01 | INFO | ANALYZE_SMART | BTC/USDT | Price=117064.78 | RSI=69.99 | BB=(116629.32/117044.34) | EMA=117960.49 | ATR=15997.34 | Bid=0.05 Ask=0.20 | Conf=1 | \u2755 Нет условий для входа
+2025-07-21 22:18:02 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:18:05 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:18:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:18:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:18:35 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:18:45 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:18:55 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:19:03 | INFO | ANALYZE_SMART | BTC/USDT | Price=117039.90 | RSI=66.44 | BB=(116623.96/117073.44) | EMA=117958.12 | ATR=15997.34 | Bid=0.17 Ask=0.17 | Conf=1 | \u2755 Нет условий для входа
+2025-07-21 22:19:04 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:19:05 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:19:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:19:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:19:35 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:19:45 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:19:55 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:20:05 | INFO | ANALYZE_SMART | BTC/USDT | Price=116973.38 | RSI=58.61 | BB=(116638.52/117084.22) | EMA=117951.78 | ATR=15997.34 | Bid=0.22 Ask=0.17 | Conf=1 | \u2755 Нет условий для входа
+2025-07-21 22:20:05 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:20:05 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:20:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:20:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:20:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:20:32 | INFO | Application is stopping. This might take a moment.
+2025-07-21 22:20:32 | INFO | Application.stop() complete
+2025-07-21 22:20:32 | ERROR | Task was destroyed but it is pending!
+task: <Task pending name='Task-41' coro=<auto_trade_cycle() running at E:\bot\core\auto_trader.py:60> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2025-07-21 22:20:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
+2025-07-21 22:20:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-21 22:20:42 | INFO | Application started
+2025-07-21 22:20:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:21:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:21:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:21:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:21:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:21:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:21:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:21:40 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:21:40 | ERROR | PRICE_COMMAND_ERROR: binance does not have market symbol MEM/USDT
+2025-07-21 22:21:40 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:21:50 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:22:00 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:22:10 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:22:20 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:22:31 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:22:41 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:22:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:22:57 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:22:57 | ERROR | PRICE_COMMAND_ERROR: binance does not have market symbol BTC/ETH
+2025-07-21 22:22:57 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:23:07 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:23:17 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:23:27 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:23:37 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:23:37 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:23:47 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:23:57 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:24:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:24:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:24:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:24:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:24:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:24:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:24:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:25:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:25:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:25:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:25:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:25:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:25:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:26:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:26:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:26:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:26:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:26:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:26:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:27:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:27:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:27:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:27:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:27:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:27:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:28:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:28:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:28:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:28:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:28:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:28:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:29:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:29:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:29:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:29:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:29:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:29:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:30:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:30:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:30:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:30:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:30:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:30:55 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:31:05 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:31:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:31:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:31:35 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:31:45 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:31:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:31:51 | INFO | Application is stopping. This might take a moment.
+2025-07-21 22:31:51 | INFO | Application.stop() complete
+2025-07-21 22:32:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
+2025-07-21 22:32:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-21 22:32:03 | INFO | Application started
+2025-07-21 22:32:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:32:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:32:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:32:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:32:39 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:32:49 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:32:59 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:33:00 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:33:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:33:11 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:33:21 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:33:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:33:23 | WARNING | PRICE_COMMAND_ERROR: binance does not have market symbol DOGEBTC/USDT
+2025-07-21 22:33:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:33:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:33:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:33:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:33:56 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:33:57 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:34:07 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:34:17 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:34:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:34:25 | WARNING | PRICE_COMMAND_ERROR: binance does not have market symbol LTCUSDT/USDT
+2025-07-21 22:34:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:34:35 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:34:45 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:34:46 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:34:46 | WARNING | PRICE_COMMAND_ERROR: binance does not have market symbol BTCUSDT/USDT
+2025-07-21 22:34:46 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:34:56 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:35:06 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:35:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:35:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:35:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:35:46 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:35:56 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:36:06 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:36:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:36:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:36:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:36:46 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:36:56 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:37:06 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:37:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:37:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:37:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:37:34 | INFO | Application is stopping. This might take a moment.
+2025-07-21 22:37:34 | INFO | Application.stop() complete
+2025-07-21 22:56:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
+2025-07-21 22:56:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-21 22:56:01 | INFO | Application started
+2025-07-21 22:56:11 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:56:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:56:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:56:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:56:48 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:56:48 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:56:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:56:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:57:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:57:07 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:57:07 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:57:17 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:57:27 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:57:37 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:57:47 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:57:57 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:58:07 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:58:11 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:58:11 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:58:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:58:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:58:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:58:19 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:58:20 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:58:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:58:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:58:27 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:58:28 | INFO | ANALYZE_SMART | BTC/USDT | Price=116963.39 | RSI=37.30 | BB=(116902.71/117239.36) | EMA=117950.83 | ATR=16003.64 | Bid=0.20 Ask=0.87 | Conf=1 | \u2755 Нет условий для входа
+2025-07-21 22:58:28 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:58:30 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:58:31 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:58:31 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:58:41 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:58:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:59:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:59:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:59:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:59:10 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:59:10 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:59:10 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:59:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:59:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:59:13 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
+    await coroutine
+  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
+    return await self.callback(update, context)
+  File "E:\bot\telegram_bot\handlers.py", line 49, in toggle_auto
+    asyncio.create_task(auto_trade_cycle())
+TypeError: auto_trade_cycle() missing 1 required positional argument: 'app'
+2025-07-21 22:59:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:59:16 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-21 22:59:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:59:18 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:59:18 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-21 22:59:28 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:59:38 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:59:48 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 22:59:58 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:00:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:00:18 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:00:28 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:00:38 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:00:48 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:00:58 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:01:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:01:18 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:01:28 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:01:38 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:01:48 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:01:58 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:02:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:02:18 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:02:28 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:02:38 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:02:48 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:02:58 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:03:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:03:18 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:03:29 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:03:39 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:03:49 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:03:59 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:04:09 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:04:19 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:04:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-21 23:04:23 | INFO | Application is stopping. This might take a moment.
+2025-07-21 23:04:23 | INFO | Application.stop() complete
+2025-07-22 04:23:17 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
+2025-07-22 04:23:17 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-22 04:23:17 | INFO | Application started
+2025-07-22 04:23:27 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:23:37 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:23:47 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:23:57 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:23:59 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:24:00 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-22 04:24:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:24:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-22 04:24:07 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:24:07 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-22 04:24:13 | INFO | ANALYZE_SMART | BTC/USDT | Price=117626.93 | RSI=56.61 | BB=(117384.29/117683.68) | EMA=117716.48 | ATR=18020.55 | Bid=0.23 Ask=0.85 | Conf=1 | \u2755 Нет условий для входа
+2025-07-22 04:24:14 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-22 04:24:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:24:14 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-22 04:24:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-22 04:24:17 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:24:17 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-22 04:24:27 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:24:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:24:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-22 04:24:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:24:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:24:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-22 04:25:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:25:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:25:09 | INFO | ANALYZE_SMART | BTC/USDT | Price=117607.96 | RSI=54.39 | BB=(117389.03/117672.81) | EMA=117714.67 | ATR=18020.55 | Bid=0.21 Ask=0.17 | Conf=1 | \u2755 Нет условий для входа
+2025-07-22 04:25:09 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-22 04:25:15 | INFO | ANALYZE_SMART | BTC/USDT | Price=117607.28 | RSI=54.32 | BB=(117389.07/117672.71) | EMA=117714.61 | ATR=18020.55 | Bid=0.20 Ask=0.17 | Conf=1 | \u2755 Нет условий для входа
+2025-07-22 04:25:16 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-22 04:25:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:25:16 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-22 04:25:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-22 04:25:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:25:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-22 04:25:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:25:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:25:52 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:26:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:26:12 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:26:17 | INFO | ANALYZE_SMART | BTC/USDT | Price=117547.26 | RSI=48.31 | BB=(117398.06/117646.39) | EMA=117708.89 | ATR=18020.55 | Bid=0.15 Ask=0.21 | Conf=1 | \u2755 Нет условий для входа
+2025-07-22 04:26:18 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-22 04:26:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:26:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:26:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:26:52 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:27:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:27:12 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:27:20 | INFO | ANALYZE_SMART | BTC/USDT | Price=117573.15 | RSI=51.06 | BB=(117400.68/117640.89) | EMA=117711.36 | ATR=18020.55 | Bid=0.06 Ask=0.18 | Conf=1 | \u2755 Нет условий для входа
+2025-07-22 04:27:22 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-22 04:27:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:27:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:27:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:27:52 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:28:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:28:12 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:28:24 | INFO | ANALYZE_SMART | BTC/USDT | Price=117570.54 | RSI=50.68 | BB=(117400.34/117641.87) | EMA=117711.11 | ATR=18020.55 | Bid=0.88 Ask=0.17 | Conf=2 | \u2755 Нет условий для входа
+2025-07-22 04:28:25 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2025-07-22 04:28:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:28:35 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:28:45 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:28:55 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:29:05 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:29:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:29:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:29:24 | INFO | Application is stopping. This might take a moment.
+2025-07-22 04:29:24 | INFO | Application.stop() complete
+2025-07-22 04:29:24 | ERROR | Task was destroyed but it is pending!
+task: <Task pending name='Task-27' coro=<auto_trade_cycle() running at E:\bot\core\auto_trader.py:60> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2025-07-22 04:30:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
+2025-07-22 04:30:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-22 04:30:24 | INFO | Application started
+2025-07-22 04:30:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:30:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:30:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:31:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:31:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:31:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:31:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:31:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:31:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:32:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:32:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-22 04:32:11 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:32:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:32:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-22 04:32:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:32:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:32:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:32:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
+2025-07-22 04:32:46 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:32:56 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:33:06 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:33:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:33:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:33:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:33:46 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:33:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
+2025-07-22 04:33:51 | INFO | Application is stopping. This might take a moment.
+2025-07-22 04:33:51 | INFO | Application.stop() complete

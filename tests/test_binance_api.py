@@ -1,0 +1,1 @@
+# Тест Binance API 
