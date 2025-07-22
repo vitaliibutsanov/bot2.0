@@ -36,29 +36,41 @@ def analyze_market_smart(symbol='BTC/USDT', timeframe='1h', limit=100):
                           columns=['time', 'open', 'high', 'low', 'close', 'volume'])
         atr = AverageTrueRange(high=df['high'], low=df['low'], close=df['close'], window=14).average_true_range().iloc[-1]
 
+        # ===== Определяем позицию цены =====
         price_position = "🔹 Цена между уровнями"
         if price <= bb_lower:
             price_position = "🟢 Цена у нижней границы BB"
         elif price >= bb_upper:
             price_position = "🔴 Цена у верхней границы BB"
 
+        # ===== Orderbook анализ =====
         orderbook = binance.fetch_order_book(symbol, limit=10)
         bid_volume = sum([b[1] for b in orderbook['bids'][:3]])
         ask_volume = sum([a[1] for a in orderbook['asks'][:3]])
         imbalance = (bid_volume - ask_volume) / max(bid_volume + ask_volume, 1)
 
+        # ===== Считаем доверие =====
         confidence = 0
-        if rsi < 35: confidence += 1
+        rsi_buy_level = 40  # было 35, сделали мягче
+        rsi_sell_level = 60  # было 65, сделали мягче
+
+        if rsi < rsi_buy_level: confidence += 1
         if price <= bb_lower: confidence += 1
-        if imbalance > 0.2: confidence += 1
+        if imbalance > 0.15: confidence += 1
         if price > ema: confidence += 1
         if atr > 0: confidence += 1
 
         signal = "❕ Нет условий для входа"
-        if confidence >= 4 and rsi < 35:
+        if confidence >= 3 and rsi < rsi_buy_level:
             signal = "📈 СИГНАЛ: ПОКУПАТЬ"
-        elif confidence >= 4 and rsi > 65:
+        elif confidence >= 3 and rsi > rsi_sell_level:
             signal = "📉 СИГНАЛ: ПРОДАВАТЬ"
+        else:
+            # fallback стратегия
+            if rsi > 50 and price > ema:
+                signal = "📈 СЛАБЫЙ СИГНАЛ: тренд вверх (EMA)"
+            elif rsi < 50 and price < ema:
+                signal = "📉 СЛАБЫЙ СИГНАЛ: тренд вниз (EMA)"
 
         logging.info(
             f"ANALYZE_SMART | {symbol} | Price={price:.2f} | RSI={rsi:.2f} | BB=({bb_lower:.2f}/{bb_upper:.2f}) | "
