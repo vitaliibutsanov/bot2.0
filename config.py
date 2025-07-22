@@ -9,14 +9,18 @@ load_dotenv()
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = int(os.getenv("TELEGRAM_CHAT_ID", 0))
 
-# ===== BINANCE =====
+# ===== BINANCE FUTURES TESTNET =====
 binance = ccxt.binance({
     'apiKey': os.getenv('BINANCE_API_KEY'),
     'secret': os.getenv('BINANCE_API_SECRET'),
-    'options': {'adjustForTimeDifference': True}
+    'enableRateLimit': True,
+    'options': {
+        'defaultType': 'future',  # ВАЖНО: фьючерсы
+        'adjustForTimeDifference': True
+    }
 })
 
-# Включаем sandbox-режим для тестов
+# Включаем sandbox-режим (testnet)
 binance.set_sandbox_mode(True)
 
 # Настройки автотрейда

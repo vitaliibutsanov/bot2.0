@@ -2,6 +2,7 @@ import logging
 from datetime import datetime, timedelta
 from config import binance
 
+
 class FuturesManager:
     def __init__(self):
         self.active_positions = {}
@@ -12,13 +13,29 @@ class FuturesManager:
     def is_paused(self):
         return self.cooldown_until and datetime.now() < self.cooldown_until
 
+    def get_current_price(self, symbol):
+        """Возвращает текущую цену символа или None при ошибке."""
+        try:
+            ticker = binance.fetch_ticker(symbol)
+            return ticker['last']
+        except Exception as e:
+            logging.error(f"PRICE_ERROR | {symbol} | {e}")
+            return None
+
     async def open_position(self, symbol, side, amount, leverage=5, stop_loss=None, take_profit=None):
+        """Открытие позиции с проверкой типа рынка (spot/futures)."""
         if self.is_paused():
             return False, f"Торговля на паузе до {self.cooldown_until.strftime('%H:%M:%S')}."
         try:
-            binance.set_leverage(leverage, symbol)
+            # Проверяем поддержку установки плеча
+            try:
+                if hasattr(binance, "set_leverage"):
+                    binance.set_leverage(leverage, symbol)
+            except Exception as e:
+                logging.warning(f"LEVERAGE_SKIP | {symbol} | {e}")
+
             order = binance.create_order(symbol=symbol, type='MARKET', side=side, amount=amount)
-            entry_price = order.get('price', binance.fetch_ticker(symbol)['last'])
+            entry_price = order.get('price', self.get_current_price(symbol))
             self.active_positions[order['id']] = {
                 'symbol': symbol,
                 'side': side,
@@ -51,8 +68,9 @@ class FuturesManager:
         closed_positions = []
         for pid, pos in list(self.active_positions.items()):
             try:
-                ticker = binance.fetch_ticker(pos['symbol'])
-                price = ticker['last']
+                price = self.get_current_price(pos['symbol'])
+                if price is None:
+                    continue
                 side = pos['side']
                 if pos['take_profit'] and ((side == 'BUY' and price >= pos['take_profit']) or (side == 'SELL' and price <= pos['take_profit'])):
                     await self.close_position(pid)
@@ -70,21 +88,16 @@ class FuturesManager:
         return closed_positions
 
 
-# Создаем объект менеджера фьючерсов
 futures_manager = FuturesManager()
 
 
-# Асинхронная команда автотрейда для Telegram
+# ==== Заглушка auto_command ====
 async def auto_command():
-    """
-    Запускает проверку открытых позиций через FuturesManager.
-    Возвращает список закрытых позиций или статус.
-    """
+    """Проверка активных позиций и возврат статуса."""
     try:
-        closed_positions = await futures_manager.check_positions()
-        if closed_positions:
-            return "🔄 Автотрейдинг: закрыты позиции:\n" + "\n".join(closed_positions)
+        if futures_manager.active_positions:
+            return f"Активные позиции: {len(futures_manager.active_positions)}"
         else:
-            return "✅ Автотрейдинг активен. Открытых позиций нет."
+            return "Активных позиций нет."
     except Exception as e:
-        return f"⚠ Ошибка автотрейдинга: {e}"
+        return f"Ошибка авто-команды: {e}"
