@@ -25,4 +25,7 @@ binance.set_sandbox_mode(True)
 
 # Настройки автотрейда
 AUTO_TRADING = True
-RISK_PER_TRADE = 0.02  # 2% от депозита
+
+# ===== Торговые параметры =====
+TRADE_PERCENT = 0.01  # 1% от депозита на сделку
+RISK_PER_TRADE = 0.02  # 2% риск на сделку (для стратегий с SL)

@@ -5,16 +5,27 @@ class VirtualPortfolio:
     def __init__(self, initial_balance=1000):
         self.initial_balance = initial_balance
         self.balance = initial_balance
-        self.history = []
+        self.history = []  # [(datetime, pnl_usdt, type)]
+        self.buy_count = 0
+        self.sell_count = 0
 
-    def apply_trade(self, pnl_usdt):
+    def apply_trade(self, pnl_usdt, trade_type="SELL"):
+        """Добавляем сделку в историю (pnl_usdt может быть отрицательным)."""
         self.balance += pnl_usdt
-        self.history.append((datetime.now(), pnl_usdt))
-        logging.info(f"VIRTUAL_PNL | {pnl_usdt:.2f} USDT | Balance={self.balance:.2f} USDT")
+        self.history.append((datetime.now(), pnl_usdt, trade_type))
+
+        if trade_type == "BUY":
+            self.buy_count += 1
+        elif trade_type == "SELL":
+            self.sell_count += 1
+
+        logging.info(
+            f"VIRTUAL_PNL | {trade_type} | {pnl_usdt:.2f} USDT | Balance={self.balance:.2f} USDT"
+        )
 
     def calculate_report(self, days: int):
         cutoff = datetime.now() - timedelta(days=days)
-        pnl_sum = sum(p for (t, p) in self.history if t >= cutoff)
+        pnl_sum = sum(p for (t, p, _) in self.history if t >= cutoff)
         percent = (pnl_sum / self.initial_balance) * 100
         return pnl_sum, percent
 
@@ -25,6 +36,8 @@ class VirtualPortfolio:
         return (
             f"📊 Отчёт по виртуальному портфелю:\n"
             f"Баланс: {self.balance:.2f} USDT\n"
+            f"Сделок: {self.buy_count + self.sell_count} "
+            f"(BUY: {self.buy_count} | SELL: {self.sell_count})\n"
             f"24ч: {d:.2f} USDT ({dp:.2f}%)\n"
             f"7д: {w:.2f} USDT ({wp:.2f}%)\n"
             f"30д: {m:.2f} USDT ({mp:.2f}%)"
@@ -33,15 +46,5 @@ class VirtualPortfolio:
 virtual_portfolio = VirtualPortfolio(1000)
 
 def get_portfolio_status():
-    """
-    Возвращает отчёт по виртуальному портфелю.
-    Пока что заглушка, можно подключить реальный расчёт.
-    """
-    report = (
-        "📊 Отчёт по виртуальному портфелю:\n"
-        "Баланс: 1000.00 USDT\n"
-        "24ч: 0.00 USDT (0.00%)\n"
-        "7д: 0.00 USDT (0.00%)\n"
-        "30д: 0.00 USDT (0.00%)"
-    )
-    return report
+    """Возвращает отчёт по виртуальному портфелю."""
+    return virtual_portfolio.full_report()
