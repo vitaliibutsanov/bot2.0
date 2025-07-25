@@ -1,4 +1,4 @@
-import os
+import os 
 import ccxt
 from dotenv import load_dotenv
 
@@ -29,3 +29,6 @@ AUTO_TRADING = True
 # ===== Торговые параметры =====
 TRADE_PERCENT = 0.01  # 1% от депозита на сделку
 RISK_PER_TRADE = 0.02  # 2% риск на сделку (для стратегий с SL)
+
+# ===== Индикаторы =====
+ATR_THRESHOLD = 0.05  # Порог ATR для блокировки торговли (волатильность)

@@ -1,0 +1,29 @@
+{
+  "5471060641": {
+    "symbol": "BTC/USDT:USDT",
+    "side": "sell",
+    "amount": 0.001,
+    "entry_price": 115158.7,
+    "stop_loss": null,
+    "take_profit": null,
+    "opened_at": "2025-07-25 05:39:22.894094"
+  },
+  "5471071397": {
+    "symbol": "BTC/USDT:USDT",
+    "side": "sell",
+    "amount": 0.001,
+    "entry_price": 115158.7,
+    "stop_loss": null,
+    "take_profit": null,
+    "opened_at": "2025-07-25 05:39:23.651790"
+  },
+  "5471085945": {
+    "symbol": "BTC/USDT:USDT",
+    "side": "sell",
+    "amount": 0.001,
+    "entry_price": 115158.6,
+    "stop_loss": null,
+    "take_profit": null,
+    "opened_at": "2025-07-25 05:39:23.927136"
+  }
+}

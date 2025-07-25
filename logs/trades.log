@@ -1,703 +1,2673 @@
-2025-07-21 22:02:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
-2025-07-21 22:02:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
-2025-07-21 22:02:22 | INFO | Application started
-2025-07-21 22:02:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:02:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:02:52 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:03:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:03:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:03:13 | INFO | ANALYZE_SMART | BTC/USDT | Price=116790.89 | RSI=44.93 | BB=(116678.65/116897.23) | EMA=117934.40 | ATR=15975.00 | Bid=0.51 Ask=0.23 | Conf=2 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:03:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:03:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:03:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:03:21 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:03:21 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:03:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:03:24 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:03:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:03:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:03:26 | ERROR | No error handlers are registered, logging exception.
-Traceback (most recent call last):
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
-    await coroutine
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
-    return await self.callback(update, context)
-  File "E:\bot\telegram_bot\handlers.py", line 23, in price
-    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
-AttributeError: 'TradingConfig' object has no attribute 'binance'
-2025-07-21 22:03:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:03:33 | ERROR | No error handlers are registered, logging exception.
-Traceback (most recent call last):
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
-    await coroutine
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
-    return await self.callback(update, context)
-  File "E:\bot\telegram_bot\handlers.py", line 23, in price
-    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
-AttributeError: 'TradingConfig' object has no attribute 'binance'
-2025-07-21 22:03:40 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:03:40 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:03:42 | INFO | ANALYZE_SMART | BTC/USDT | Price=116787.74 | RSI=44.71 | BB=(116678.50/116897.07) | EMA=117934.10 | ATR=15975.00 | Bid=0.51 Ask=0.18 | Conf=2 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:03:42 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:03:50 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:04:00 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:04:09 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:04:09 | ERROR | No error handlers are registered, logging exception.
-Traceback (most recent call last):
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
-    await coroutine
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
-    return await self.callback(update, context)
-  File "E:\bot\telegram_bot\handlers.py", line 23, in price
-    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
-AttributeError: 'TradingConfig' object has no attribute 'binance'
-2025-07-21 22:04:19 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:04:29 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:04:39 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:04:43 | INFO | ANALYZE_SMART | BTC/USDT | Price=116735.88 | RSI=41.08 | BB=(116682.23/116876.40) | EMA=117929.17 | ATR=15975.00 | Bid=0.37 Ask=0.36 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:04:44 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:04:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:04:44 | ERROR | No error handlers are registered, logging exception.
-Traceback (most recent call last):
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
-    await coroutine
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
-    return await self.callback(update, context)
-  File "E:\bot\telegram_bot\handlers.py", line 23, in price
-    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
-AttributeError: 'TradingConfig' object has no attribute 'binance'
-2025-07-21 22:04:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:05:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:05:09 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:05:09 | ERROR | No error handlers are registered, logging exception.
-Traceback (most recent call last):
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
-    await coroutine
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
-    return await self.callback(update, context)
-  File "E:\bot\telegram_bot\handlers.py", line 23, in price
-    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
-AttributeError: 'TradingConfig' object has no attribute 'binance'
-2025-07-21 22:05:19 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:05:29 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:05:39 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:05:45 | INFO | ANALYZE_SMART | BTC/USDT | Price=116766.00 | RSI=43.61 | BB=(116682.81/116869.10) | EMA=117932.03 | ATR=15975.00 | Bid=0.16 Ask=0.55 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:05:46 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:05:49 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:05:59 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:06:09 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:06:19 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:06:29 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:06:39 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:06:47 | INFO | ANALYZE_SMART | BTC/USDT | Price=116723.33 | RSI=39.99 | BB=(116673.58/116870.09) | EMA=117927.97 | ATR=15975.00 | Bid=0.25 Ask=0.22 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:06:48 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:06:49 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:06:59 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:07:09 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:07:19 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:07:29 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:07:39 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:07:50 | INFO | ANALYZE_SMART | BTC/USDT | Price=116730.86 | RSI=40.97 | BB=(116677.70/116868.51) | EMA=117928.69 | ATR=15975.00 | Bid=0.21 Ask=0.20 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:07:50 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:07:50 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:08:00 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:08:11 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:08:21 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:08:31 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:08:41 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:08:53 | INFO | ANALYZE_SMART | BTC/USDT | Price=116810.34 | RSI=49.04 | BB=(116697.00/116865.71) | EMA=117936.26 | ATR=15975.43 | Bid=0.24 Ask=0.22 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:08:53 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:08:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:09:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:09:06 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:09:06 | ERROR | No error handlers are registered, logging exception.
-Traceback (most recent call last):
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
-    await coroutine
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
-    return await self.callback(update, context)
-  File "E:\bot\telegram_bot\handlers.py", line 23, in price
-    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
-AttributeError: 'TradingConfig' object has no attribute 'binance'
-2025-07-21 22:09:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:09:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:09:26 | ERROR | No error handlers are registered, logging exception.
-Traceback (most recent call last):
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
-    await coroutine
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
-    return await self.callback(update, context)
-  File "E:\bot\telegram_bot\handlers.py", line 23, in price
-    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
-AttributeError: 'TradingConfig' object has no attribute 'binance'
-2025-07-21 22:09:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:09:46 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:09:52 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:09:52 | ERROR | No error handlers are registered, logging exception.
-Traceback (most recent call last):
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
-    await coroutine
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
-    return await self.callback(update, context)
-  File "E:\bot\telegram_bot\handlers.py", line 23, in price
-    ticker = config.binance.fetch_ticker(f"{coin}/USDT")
-AttributeError: 'TradingConfig' object has no attribute 'binance'
-2025-07-21 22:09:55 | INFO | ANALYZE_SMART | BTC/USDT | Price=116866.02 | RSI=54.26 | BB=(116693.29/116877.48) | EMA=117941.56 | ATR=15979.41 | Bid=0.16 Ask=0.26 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:09:55 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:10:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:10:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:10:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:10:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:10:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:10:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:10:56 | INFO | ANALYZE_SMART | BTC/USDT | Price=116871.01 | RSI=54.67 | BB=(116689.84/116888.56) | EMA=117942.03 | ATR=15980.06 | Bid=0.13 Ask=0.21 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:10:58 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:11:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:11:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:11:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:11:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:11:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:11:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:11:59 | INFO | ANALYZE_SMART | BTC/USDT | Price=116865.15 | RSI=53.97 | BB=(116688.31/116897.99) | EMA=117941.48 | ATR=15980.06 | Bid=0.21 Ask=0.21 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:12:00 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:12:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:12:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:12:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:12:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:12:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:12:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:13:02 | INFO | ANALYZE_SMART | BTC/USDT | Price=116859.04 | RSI=53.11 | BB=(116686.62/116904.35) | EMA=117940.89 | ATR=15980.06 | Bid=0.20 Ask=0.19 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:13:03 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:13:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:13:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:13:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:13:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:13:32 | INFO | Application is stopping. This might take a moment.
-2025-07-21 22:13:32 | INFO | Application.stop() complete
-2025-07-21 22:13:32 | ERROR | Task was destroyed but it is pending!
-task: <Task pending name='Task-38' coro=<auto_trade_cycle() running at E:\bot\core\auto_trader.py:60> wait_for=<Future pending cb=[Task.task_wakeup()]>>
-2025-07-21 22:13:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
-2025-07-21 22:13:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
-2025-07-21 22:13:43 | INFO | Application started
-2025-07-21 22:13:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:14:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:14:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:14:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:14:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:14:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:14:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:15:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:15:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:15:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:15:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:15:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:15:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:15:55 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:15:55 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:15:56 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:15:57 | INFO | ANALYZE_SMART | BTC/USDT | Price=116980.00 | RSI=64.11 | BB=(116663.75/116953.65) | EMA=117952.41 | ATR=15987.55 | Bid=0.52 Ask=0.17 | Conf=2 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:15:58 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:16:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:16:05 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:16:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:16:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:16:35 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:16:38 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:16:38 | ERROR | PRICE_COMMAND_ERROR: too many values to unpack (expected 2)
-2025-07-21 22:16:38 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:16:48 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:16:58 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:16:59 | INFO | ANALYZE_SMART | BTC/USDT | Price=117043.92 | RSI=68.65 | BB=(116640.55/117002.97) | EMA=117958.50 | ATR=15992.12 | Bid=0.23 Ask=0.19 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:17:00 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:17:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:17:04 | ERROR | PRICE_COMMAND_ERROR: too many values to unpack (expected 2)
-2025-07-21 22:17:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:17:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:17:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:17:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:17:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:17:55 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:18:01 | INFO | ANALYZE_SMART | BTC/USDT | Price=117064.78 | RSI=69.99 | BB=(116629.32/117044.34) | EMA=117960.49 | ATR=15997.34 | Bid=0.05 Ask=0.20 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:18:02 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:18:05 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:18:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:18:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:18:35 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:18:45 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:18:55 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:19:03 | INFO | ANALYZE_SMART | BTC/USDT | Price=117039.90 | RSI=66.44 | BB=(116623.96/117073.44) | EMA=117958.12 | ATR=15997.34 | Bid=0.17 Ask=0.17 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:19:04 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:19:05 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:19:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:19:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:19:35 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:19:45 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:19:55 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:20:05 | INFO | ANALYZE_SMART | BTC/USDT | Price=116973.38 | RSI=58.61 | BB=(116638.52/117084.22) | EMA=117951.78 | ATR=15997.34 | Bid=0.22 Ask=0.17 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:20:05 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:20:05 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:20:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:20:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:20:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:20:32 | INFO | Application is stopping. This might take a moment.
-2025-07-21 22:20:32 | INFO | Application.stop() complete
-2025-07-21 22:20:32 | ERROR | Task was destroyed but it is pending!
-task: <Task pending name='Task-41' coro=<auto_trade_cycle() running at E:\bot\core\auto_trader.py:60> wait_for=<Future pending cb=[Task.task_wakeup()]>>
-2025-07-21 22:20:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
-2025-07-21 22:20:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
-2025-07-21 22:20:42 | INFO | Application started
-2025-07-21 22:20:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:21:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:21:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:21:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:21:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:21:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:21:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:21:40 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:21:40 | ERROR | PRICE_COMMAND_ERROR: binance does not have market symbol MEM/USDT
-2025-07-21 22:21:40 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:21:50 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:22:00 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:22:10 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:22:20 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:22:31 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:22:41 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:22:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:22:57 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:22:57 | ERROR | PRICE_COMMAND_ERROR: binance does not have market symbol BTC/ETH
-2025-07-21 22:22:57 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:23:07 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:23:17 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:23:27 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:23:37 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:23:37 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:23:47 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:23:57 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:24:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:24:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:24:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:24:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:24:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:24:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:24:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:25:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:25:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:25:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:25:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:25:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:25:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:26:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:26:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:26:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:26:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:26:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:26:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:27:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:27:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:27:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:27:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:27:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:27:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:28:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:28:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:28:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:28:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:28:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:28:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:29:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:29:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:29:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:29:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:29:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:29:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:30:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:30:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:30:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:30:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:30:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:30:55 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:31:05 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:31:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:31:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:31:35 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:31:45 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:31:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:31:51 | INFO | Application is stopping. This might take a moment.
-2025-07-21 22:31:51 | INFO | Application.stop() complete
-2025-07-21 22:32:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
-2025-07-21 22:32:03 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
-2025-07-21 22:32:03 | INFO | Application started
-2025-07-21 22:32:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:32:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:32:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:32:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:32:39 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:32:49 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:32:59 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:33:00 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:33:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:33:11 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:33:21 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:33:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:33:23 | WARNING | PRICE_COMMAND_ERROR: binance does not have market symbol DOGEBTC/USDT
-2025-07-21 22:33:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:33:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:33:43 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:33:53 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:33:56 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:33:57 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:34:07 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:34:17 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:34:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:34:25 | WARNING | PRICE_COMMAND_ERROR: binance does not have market symbol LTCUSDT/USDT
-2025-07-21 22:34:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:34:35 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:34:45 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:34:46 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:34:46 | WARNING | PRICE_COMMAND_ERROR: binance does not have market symbol BTCUSDT/USDT
-2025-07-21 22:34:46 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:34:56 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:35:06 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:35:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:35:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:35:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:35:46 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:35:56 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:36:06 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:36:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:36:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:36:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:36:46 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:36:56 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:37:06 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:37:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:37:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:37:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:37:34 | INFO | Application is stopping. This might take a moment.
-2025-07-21 22:37:34 | INFO | Application.stop() complete
-2025-07-21 22:56:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
-2025-07-21 22:56:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
-2025-07-21 22:56:01 | INFO | Application started
-2025-07-21 22:56:11 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:56:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:56:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:56:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:56:48 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:56:48 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:56:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:56:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:57:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:57:07 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:57:07 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:57:17 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:57:27 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:57:37 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:57:47 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:57:57 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:58:07 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:58:11 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:58:11 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:58:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:58:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:58:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:58:19 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:58:20 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:58:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:58:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:58:27 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:58:28 | INFO | ANALYZE_SMART | BTC/USDT | Price=116963.39 | RSI=37.30 | BB=(116902.71/117239.36) | EMA=117950.83 | ATR=16003.64 | Bid=0.20 Ask=0.87 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-21 22:58:28 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:58:30 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:58:31 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:58:31 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:58:41 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:58:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:59:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:59:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:59:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:59:10 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:59:10 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:59:10 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:59:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:59:13 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:59:13 | ERROR | No error handlers are registered, logging exception.
-Traceback (most recent call last):
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_application.py", line 1311, in process_update
-    await coroutine
-  File "C:\Users\koban\AppData\Local\Programs\Python\Python310\lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
-    return await self.callback(update, context)
-  File "E:\bot\telegram_bot\handlers.py", line 49, in toggle_auto
-    asyncio.create_task(auto_trade_cycle())
-TypeError: auto_trade_cycle() missing 1 required positional argument: 'app'
-2025-07-21 22:59:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:59:16 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-21 22:59:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:59:18 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:59:18 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-21 22:59:28 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:59:38 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:59:48 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 22:59:58 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:00:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:00:18 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:00:28 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:00:38 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:00:48 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:00:58 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:01:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:01:18 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:01:28 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:01:38 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:01:48 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:01:58 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:02:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:02:18 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:02:28 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:02:38 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:02:48 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:02:58 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:03:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:03:18 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:03:29 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:03:39 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:03:49 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:03:59 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:04:09 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:04:19 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:04:23 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-21 23:04:23 | INFO | Application is stopping. This might take a moment.
-2025-07-21 23:04:23 | INFO | Application.stop() complete
-2025-07-22 04:23:17 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
-2025-07-22 04:23:17 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
-2025-07-22 04:23:17 | INFO | Application started
-2025-07-22 04:23:27 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:23:37 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:23:47 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:23:57 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:23:59 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:24:00 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-22 04:24:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:24:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-22 04:24:07 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:24:07 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-22 04:24:13 | INFO | ANALYZE_SMART | BTC/USDT | Price=117626.93 | RSI=56.61 | BB=(117384.29/117683.68) | EMA=117716.48 | ATR=18020.55 | Bid=0.23 Ask=0.85 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-22 04:24:14 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-22 04:24:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:24:14 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-22 04:24:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-22 04:24:17 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:24:17 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-22 04:24:27 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:24:33 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:24:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-22 04:24:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:24:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:24:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-22 04:25:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:25:08 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:25:09 | INFO | ANALYZE_SMART | BTC/USDT | Price=117607.96 | RSI=54.39 | BB=(117389.03/117672.81) | EMA=117714.67 | ATR=18020.55 | Bid=0.21 Ask=0.17 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-22 04:25:09 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-22 04:25:15 | INFO | ANALYZE_SMART | BTC/USDT | Price=117607.28 | RSI=54.32 | BB=(117389.07/117672.71) | EMA=117714.61 | ATR=18020.55 | Bid=0.20 Ask=0.17 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-22 04:25:16 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-22 04:25:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:25:16 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-22 04:25:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-22 04:25:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:25:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-22 04:25:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:25:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:25:52 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:26:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:26:12 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:26:17 | INFO | ANALYZE_SMART | BTC/USDT | Price=117547.26 | RSI=48.31 | BB=(117398.06/117646.39) | EMA=117708.89 | ATR=18020.55 | Bid=0.15 Ask=0.21 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-22 04:26:18 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-22 04:26:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:26:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:26:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:26:52 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:27:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:27:12 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:27:20 | INFO | ANALYZE_SMART | BTC/USDT | Price=117573.15 | RSI=51.06 | BB=(117400.68/117640.89) | EMA=117711.36 | ATR=18020.55 | Bid=0.06 Ask=0.18 | Conf=1 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-22 04:27:22 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-22 04:27:22 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:27:32 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:27:42 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:27:52 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:28:02 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:28:12 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:28:24 | INFO | ANALYZE_SMART | BTC/USDT | Price=117570.54 | RSI=50.68 | BB=(117400.34/117641.87) | EMA=117711.11 | ATR=18020.55 | Bid=0.88 Ask=0.17 | Conf=2 | \u2755 ÕÂÚ ÛÒÎÓ‚ËÈ ‰Îˇ ‚ıÓ‰‡
-2025-07-22 04:28:25 | ERROR | BALANCE_ERROR: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
-2025-07-22 04:28:25 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:28:35 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:28:45 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:28:55 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:29:05 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:29:15 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:29:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:29:24 | INFO | Application is stopping. This might take a moment.
-2025-07-22 04:29:24 | INFO | Application.stop() complete
-2025-07-22 04:29:24 | ERROR | Task was destroyed but it is pending!
-task: <Task pending name='Task-27' coro=<auto_trade_cycle() running at E:\bot\core\auto_trader.py:60> wait_for=<Future pending cb=[Task.task_wakeup()]>>
-2025-07-22 04:30:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getMe "HTTP/1.1 200 OK"
-2025-07-22 04:30:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/deleteWebhook "HTTP/1.1 200 OK"
-2025-07-22 04:30:24 | INFO | Application started
-2025-07-22 04:30:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:30:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:30:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:31:04 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:31:14 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:31:24 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:31:34 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:31:44 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:31:54 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:32:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:32:01 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-22 04:32:11 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:32:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:32:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-22 04:32:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:32:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:32:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:32:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/sendMessage "HTTP/1.1 200 OK"
-2025-07-22 04:32:46 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:32:56 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:33:06 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:33:16 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:33:26 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:33:36 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:33:46 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:33:51 | INFO | HTTP Request: POST https://api.telegram.org/bot7967045044:AAFq8jFRmFpbtioVMZi4wmlemHARA7Ym1jA/getUpdates "HTTP/1.1 200 OK"
-2025-07-22 04:33:51 | INFO | Application is stopping. This might take a moment.
-2025-07-22 04:33:51 | INFO | Application.stop() complete
-2025-07-22 18:25:56,931 | OPEN BUY BTC/USDT @ 119097.72
-2025-07-22 18:27:54,745 | OPEN BUY BTC/USDT @ 118982.9
-2025-07-22 18:28:55,206 | OPEN BUY BTC/USDT @ 118950.01
-2025-07-22 18:29:54,288 | OPEN BUY BTC/USDT @ 118960.0
-2025-07-22 18:30:54,897 | OPEN BUY BTC/USDT @ 118977.42
-2025-07-22 18:35:58,301 | OPEN BUY BTC/USDT @ 119024.92
-2025-07-22 18:36:57,434 | OPEN BUY BTC/USDT @ 119030.21
-2025-07-22 18:41:54,768 | OPEN BUY BTC/USDT @ 118833.3
-2025-07-22 18:42:55,262 | OPEN BUY BTC/USDT @ 118743.53
-2025-07-22 18:43:55,725 | OPEN BUY BTC/USDT @ 118839.64
-2025-07-22 18:46:54,288 | OPEN BUY BTC/USDT @ 118830.42
-2025-07-22 18:47:55,809 | OPEN BUY BTC/USDT @ 118794.83
-2025-07-22 18:48:54,293 | OPEN BUY BTC/USDT @ 118772.91
-2025-07-22 18:49:53,776 | OPEN BUY BTC/USDT @ 118763.85
-2025-07-22 18:50:54,806 | OPEN BUY BTC/USDT @ 118744.7
-2025-07-22 18:51:55,255 | OPEN BUY BTC/USDT @ 118660.0
-2025-07-22 18:52:54,767 | OPEN BUY BTC/USDT @ 118716.0
-2025-07-22 18:53:54,270 | OPEN BUY BTC/USDT @ 118681.0
-2025-07-22 18:54:55,259 | OPEN BUY BTC/USDT @ 118724.86
-2025-07-22 18:55:55,232 | OPEN BUY BTC/USDT @ 118738.17
-2025-07-22 18:56:54,306 | OPEN BUY BTC/USDT @ 118719.04
-2025-07-22 18:57:54,744 | OPEN BUY BTC/USDT @ 118732.74
-2025-07-22 18:58:54,281 | OPEN BUY BTC/USDT @ 118659.34
-2025-07-22 18:59:54,282 | OPEN BUY BTC/USDT @ 118681.24
-2025-07-22 19:00:55,248 | OPEN BUY BTC/USDT @ 118671.31
-2025-07-22 19:01:54,792 | OPEN BUY BTC/USDT @ 118642.53
-2025-07-22 19:02:54,295 | OPEN BUY BTC/USDT @ 118665.91
-2025-07-22 19:03:54,786 | OPEN BUY BTC/USDT @ 118666.44
-2025-07-22 19:04:53,794 | OPEN BUY BTC/USDT @ 118673.38
-2025-07-22 19:05:56,970 | OPEN BUY BTC/USDT @ 118763.9
-2025-07-22 19:06:56,905 | OPEN BUY BTC/USDT @ 118761.62
-2025-07-22 19:07:57,403 | OPEN BUY BTC/USDT @ 118746.49
-2025-07-22 19:11:54,747 | OPEN BUY BTC/USDT @ 118610.37
-2025-07-22 19:12:53,808 | OPEN BUY BTC/USDT @ 118494.99
-2025-07-22 19:13:54,753 | OPEN BUY BTC/USDT @ 118487.45
-2025-07-22 19:14:55,211 | OPEN BUY BTC/USDT @ 118580.86
-2025-07-22 19:15:55,739 | OPEN BUY BTC/USDT @ 118566.0
-2025-07-22 19:17:55,780 | OPEN BUY BTC/USDT @ 118594.75
-2025-07-22 19:20:55,505 | OPEN BUY BTC/USDT @ 118632.29
-2025-07-22 19:21:58,400 | OPEN BUY BTC/USDT @ 118662.4
-2025-07-22 19:22:57,440 | OPEN BUY BTC/USDT @ 118647.96
-2025-07-22 22:35:39,066 | OPEN BUY BTC/USDT @ 119650.28
-2025-07-22 22:36:38,683 | OPEN BUY BTC/USDT @ 119642.0
-2025-07-23 04:42:57,719 | OPEN BUY BTC/USDT @ 119209.5 | TP=120997.64 | SL=118375.03
-2025-07-23 04:44:59,136 | OPEN BUY BTC/USDT @ 119063.9 | TP=120849.86 | SL=118230.45
-2025-07-23 04:45:58,658 | OPEN BUY BTC/USDT @ 119029.2 | TP=120814.64 | SL=118196.0
-2025-07-23 04:46:59,107 | OPEN BUY BTC/USDT @ 119074.4 | TP=120860.52 | SL=118240.88
-2025-07-23 04:47:58,675 | OPEN BUY BTC/USDT @ 119020.6 | TP=120805.91 | SL=118187.46
-2025-07-23 04:49:58,181 | OPEN BUY BTC/USDT @ 119075.2 | TP=120861.33 | SL=118241.67
-2025-07-23 04:51:57,708 | OPEN BUY BTC/USDT @ 119139.8 | TP=120926.9 | SL=118305.82
-2025-07-23 04:56:57,700 | OPEN BUY BTC/USDT @ 119076.9 | TP=120863.05 | SL=118243.36
-2025-07-23 04:57:59,776 | CLOSE BTC/USDT @ 119111.0
-2025-07-23 05:02:58,142 | OPEN BUY BTC/USDT @ 118940.5 | TP=120724.61 | SL=118107.92
-2025-07-23 05:03:59,127 | OPEN BUY BTC/USDT @ 118939.1 | TP=120723.19 | SL=118106.53
-2025-07-23 05:11:40,099 | OPEN BUY BTC/USDT @ 118983.9 | AMOUNT=0.001 BTC | TP=120768.66 | SL=118151.01
-2025-07-23 05:22:01,714 | OPEN BUY BTC/USDT @ 118905.3 | AMOUNT=0.001 BTC | TP=120688.88 | SL=118072.96
-2025-07-23 05:46:10,547 | OPEN BUY BTC/USDT @ 118756.5 | AMOUNT=0.001 BTC | TP=120537.85 | SL=117925.2
-2025-07-23 05:47:06,761 | OPEN BUY BTC/USDT @ 118681.2 | AMOUNT=0.001 BTC | TP=120461.42 | SL=117850.43
-2025-07-23 06:11:07,223 | OPEN BUY BTC/USDT @ 118681.5 | AMOUNT=0.001 BTC | TP=120461.72 | SL=117850.73
-2025-07-23 06:12:02,898 | CLOSE BTC/USDT @ 118720.1 | PnL=0.05 USDT
-2025-07-23 07:29:01,813 | OPEN BUY BTC/USDT @ 118730.4 | AMOUNT=0.001 BTC | TP=120511.36 | SL=117899.29
-2025-07-23 07:33:02,349 | OPEN BUY BTC/USDT @ 118750.5 | AMOUNT=0.001 BTC | TP=120531.76 | SL=117919.25
-2025-07-23 07:36:03,432 | CLOSE BTC/USDT @ 118790.0 | PnL=0.08 USDT
-2025-07-23 07:38:04,373 | CLOSE BTC/USDT @ 118814.3 | PnL=0.08 USDT
-2025-07-23 07:47:03,715 | OPEN BUY BTC/USDT @ 118700.1 | AMOUNT=0.001 BTC | TP=120480.6 | SL=117869.2
-2025-07-23 07:53:10,391 | OPEN BUY BTC/USDT @ 118646.9 | AMOUNT=0.001 BTC | TP=120426.6 | SL=117816.37
-2025-07-23 07:55:04,748 | OPEN BUY BTC/USDT @ 118627.6 | AMOUNT=0.001 BTC | TP=120407.01 | SL=117797.21
-2025-07-23 07:57:04,823 | OPEN BUY BTC/USDT @ 118614.2 | AMOUNT=0.001 BTC | TP=120393.41 | SL=117783.9
-2025-07-23 07:59:05,397 | OPEN BUY BTC/USDT @ 118608.5 | AMOUNT=0.001 BTC | TP=120387.63 | SL=117778.24
-2025-07-23 08:02:05,734 | CLOSE BTC/USDT @ 118692.3 | PnL=-0.01 USDT
-2025-07-23 08:07:05,266 | OPEN BUY BTC/USDT @ 118600.5 | AMOUNT=0.001 BTC | TP=120379.51 | SL=117770.3
-2025-07-23 08:08:01,602 | OPEN BUY BTC/USDT @ 118600.4 | AMOUNT=0.001 BTC | TP=120379.41 | SL=117770.2
-2025-07-23 08:09:02,853 | OPEN BUY BTC/USDT @ 118600.4 | AMOUNT=0.001 BTC | TP=120379.41 | SL=117770.2
-2025-07-23 08:10:26,666 | OPEN BUY BTC/USDT @ 118600.4 | AMOUNT=0.001 BTC | TP=120379.41 | SL=117770.2
-2025-07-23 08:12:15,389 | OPEN BUY BTC/USDT @ 118500.0 | AMOUNT=0.001 BTC | TP=120277.5 | SL=117670.5
-2025-07-23 08:13:05,539 | OPEN BUY BTC/USDT @ 118500.0 | AMOUNT=0.001 BTC | TP=120277.5 | SL=117670.5
-2025-07-23 09:23:01,126 | CLOSE BTC/USDT @ 118474.8 | PnL=-0.22 USDT
-2025-07-23 09:28:00,943 | CLOSE BTC/USDT @ 118500.0 | PnL=-0.17 USDT
-2025-07-23 09:41:00,819 | OPEN BUY BTC/USDT @ 118398.5 | AMOUNT=0.001 BTC | TP=120174.48 | SL=117569.71
-2025-07-23 09:42:01,142 | OPEN BUY BTC/USDT @ 118430.1 | AMOUNT=0.001 BTC | TP=120206.55 | SL=117601.09
-2025-07-23 10:24:01,521 | CLOSE BTC/USDT @ 118402.5 | PnL=-0.26 USDT
-2025-07-23 10:27:02,274 | OPEN BUY BTC/USDT @ 118327.9 | AMOUNT=0.001 BTC | TP=120102.82 | SL=117499.6
-2025-07-23 11:38:00,409 | CLOSE BTC/USDT @ 118090.7 | PnL=-0.67 USDT
-2025-07-23 11:41:01,868 | CLOSE BTC/USDT @ 118114.8 | PnL=-0.63 USDT
-2025-07-23 11:43:00,814 | OPEN BUY BTC/USDT @ 117959.8 | AMOUNT=0.001 BTC | TP=119729.2 | SL=117134.08
-2025-07-23 11:48:01,889 | CLOSE BTC/USDT @ 118104.4 | PnL=-0.65 USDT
-2025-07-23 11:51:01,898 | CLOSE BTC/USDT @ 118090.9 | PnL=-0.66 USDT
-2025-07-23 11:54:00,882 | CLOSE BTC/USDT @ 118112.1 | PnL=-0.64 USDT
-2025-07-23 11:56:02,327 | CLOSE BTC/USDT @ 118091.0 | PnL=-0.53 USDT
-2025-07-23 11:58:01,366 | CLOSE BTC/USDT @ 118093.7 | PnL=-0.53 USDT
-2025-07-23 12:04:01,747 | OPEN BUY BTC/USDT @ 117920.2 | AMOUNT=0.001 BTC | TP=119689.0 | SL=117094.76
-2025-07-23 12:06:00,765 | OPEN BUY BTC/USDT @ 118085.0 | AMOUNT=0.001 BTC | TP=119856.27 | SL=117258.4
-2025-07-23 12:07:00,421 | CLOSE BTC/USDT @ 118025.5 | PnL=-0.49 USDT
-2025-07-23 12:08:02,306 | CLOSE BTC/USDT @ 117995.1 | PnL=-0.54 USDT
-2025-07-23 12:12:00,307 | OPEN BUY BTC/USDT @ 117856.0 | AMOUNT=0.001 BTC | TP=119623.84 | SL=117031.01
-2025-07-23 12:37:02,041 | CLOSE BTC/USDT @ 118184.1 | PnL=-0.13 USDT
-2025-07-23 13:11:02,814 | CLOSE BTC/USDT @ 118350.0 | PnL=0.51 USDT
-2025-07-23 13:14:59,884 | OPEN BUY BTC/USDT @ 118166.0 | AMOUNT=0.001 BTC | TP=119938.49 | SL=117338.84
-2025-07-23 13:17:01,760 | OPEN BUY BTC/USDT @ 118231.8 | AMOUNT=0.001 BTC | TP=120005.28 | SL=117404.18
-2025-07-23 13:22:00,401 | CLOSE BTC/USDT @ 118350.1 | PnL=0.57 USDT
-2025-07-23 13:47:02,828 | CLOSE BTC/USDT @ 118500.6 | PnL=0.54 USDT
-2025-07-23 14:09:01,295 | OPEN BUY BTC/USDT @ 118406.4 | AMOUNT=0.001 BTC | TP=120182.5 | SL=117577.56
-2025-07-23 14:10:01,803 | OPEN BUY BTC/USDT @ 118391.8 | AMOUNT=0.001 BTC | TP=120167.68 | SL=117563.06
-2025-07-23 14:11:00,789 | OPEN BUY BTC/USDT @ 118452.7 | AMOUNT=0.001 BTC | TP=120229.49 | SL=117623.53
-2025-07-23 14:22:01,872 | CLOSE BTC/USDT @ 118472.8 | PnL=0.80 USDT
-2025-07-23 14:29:01,469 | CLOSE BTC/USDT @ 118507.5 | PnL=0.48 USDT
-2025-07-23 14:30:01,901 | CLOSE BTC/USDT @ 118508.2 | PnL=0.35 USDT
-2025-07-23 14:36:00,906 | CLOSE BTC/USDT @ 118507.0 | PnL=0.13 USDT
-2025-07-23 14:41:59,829 | OPEN BUY BTC/USDT @ 118330.7 | AMOUNT=0.001 BTC | TP=120105.66 | SL=117502.39
-2025-07-23 14:43:01,794 | OPEN BUY BTC/USDT @ 118172.8 | AMOUNT=0.001 BTC | TP=119945.39 | SL=117345.59
-2025-07-23 14:44:01,321 | OPEN BUY BTC/USDT @ 118156.4 | AMOUNT=0.001 BTC | TP=119928.75 | SL=117329.31
-2025-07-23 14:45:00,783 | OPEN BUY BTC/USDT @ 118201.6 | AMOUNT=0.001 BTC | TP=119974.62 | SL=117374.19
-2025-07-23 14:46:01,751 | OPEN BUY BTC/USDT @ 118249.4 | AMOUNT=0.001 BTC | TP=120023.14 | SL=117421.65
-2025-07-23 14:47:01,248 | OPEN BUY BTC/USDT @ 118249.3 | AMOUNT=0.001 BTC | TP=120023.04 | SL=117421.55
-2025-07-23 14:49:01,291 | OPEN BUY BTC/USDT @ 118278.4 | AMOUNT=0.001 BTC | TP=120052.58 | SL=117450.45
-2025-07-23 14:53:01,768 | OPEN BUY BTC/USDT @ 118082.0 | AMOUNT=0.001 BTC | TP=119853.23 | SL=117255.43
-2025-07-23 15:06:00,921 | CLOSE BTC/USDT @ 118099.8 | PnL=-0.38 USDT
-2025-07-23 15:14:01,513 | CLOSE BTC/USDT @ 118105.8 | PnL=-0.46 USDT
-2025-07-23 15:16:01,377 | CLOSE BTC/USDT @ 118076.4 | PnL=-0.31 USDT
-2025-07-23 15:17:00,930 | CLOSE BTC/USDT @ 118042.6 | PnL=-0.17 USDT
-2025-07-23 15:18:03,341 | CLOSE BTC/USDT @ 118010.3 | PnL=-0.19 USDT
-2025-07-23 15:20:00,453 | CLOSE BTC/USDT @ 117891.5 | PnL=-0.40 USDT
-2025-07-23 15:20:59,945 | OPEN BUY BTC/USDT @ 117945.5 | AMOUNT=0.001 BTC | TP=119714.68 | SL=117119.88
-2025-07-23 15:23:01,776 | OPEN BUY BTC/USDT @ 117945.5 | AMOUNT=0.001 BTC | TP=119714.68 | SL=117119.88
-2025-07-23 15:27:01,298 | OPEN BUY BTC/USDT @ 117803.8 | AMOUNT=0.001 BTC | TP=119570.86 | SL=116979.17
-2025-07-23 15:28:01,417 | CLOSE BTC/USDT @ 118051.2 | PnL=-0.26 USDT
-2025-07-23 15:30:00,932 | CLOSE BTC/USDT @ 118121.2 | PnL=-0.17 USDT
-2025-07-23 15:31:02,349 | CLOSE BTC/USDT @ 118053.9 | PnL=-0.28 USDT
-2025-07-23 15:33:01,383 | CLOSE BTC/USDT @ 117881.7 | PnL=-0.26 USDT
-2025-07-23 15:35:00,894 | CLOSE BTC/USDT @ 117788.8 | PnL=-0.20 USDT
-2025-07-23 15:39:00,902 | CLOSE BTC/USDT @ 118135.6 | PnL=0.25 USDT
-2025-07-23 15:41:02,884 | CLOSE BTC/USDT @ 117932.2 | PnL=-0.25 USDT
+2025-07-25 05:06:50,404 | [DEBUG] OPEN_ORDERS_RAW: [
+  {
+    "info": {
+      "orderId": "5457860873",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9594d0e1112a70b60c50a0d",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "112166.60",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753302471847",
+      "updateTime": "1753302471847"
+    },
+    "id": "5457860873",
+    "clientOrderId": "x-cvBPrNm9594d0e1112a70b60c50a0d",
+    "timestamp": 1753302471847,
+    "datetime": "2025-07-23T20:27:51.847Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753302471847,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 112166.6,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 112166.6,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5457872480",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm912652464996c7737a9f8e4",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "112166.60",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753302531752",
+      "updateTime": "1753302531752"
+    },
+    "id": "5457872480",
+    "clientOrderId": "x-cvBPrNm912652464996c7737a9f8e4",
+    "timestamp": 1753302531752,
+    "datetime": "2025-07-23T20:28:51.752Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753302531752,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 112166.6,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 112166.6,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5457920143",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm920ca9dbfe94b633ec3ae26",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "112063.10",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753302770692",
+      "updateTime": "1753302770692"
+    },
+    "id": "5457920143",
+    "clientOrderId": "x-cvBPrNm920ca9dbfe94b633ec3ae26",
+    "timestamp": 1753302770692,
+    "datetime": "2025-07-23T20:32:50.692Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753302770692,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 112063.1,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 112063.1,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5457991249",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9d2541ff00a3689d5e1765",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111876.10",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753303116326",
+      "updateTime": "1753303116326"
+    },
+    "id": "5457991249",
+    "clientOrderId": "x-cvBPrNm9d2541ff00a3689d5e1765",
+    "timestamp": 1753303116326,
+    "datetime": "2025-07-23T20:38:36.326Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753303116326,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111876.1,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111876.1,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5458030829",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm941cff54415d99f2ce16abf",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111761.80",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753303296893",
+      "updateTime": "1753303296893"
+    },
+    "id": "5458030829",
+    "clientOrderId": "x-cvBPrNm941cff54415d99f2ce16abf",
+    "timestamp": 1753303296893,
+    "datetime": "2025-07-23T20:41:36.893Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753303296893,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111761.8,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111761.8,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5458053829",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9564b06f322a64595141b9e",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111816.80",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753303415383",
+      "updateTime": "1753303415383"
+    },
+    "id": "5458053829",
+    "clientOrderId": "x-cvBPrNm9564b06f322a64595141b9e",
+    "timestamp": 1753303415383,
+    "datetime": "2025-07-23T20:43:35.383Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753303415383,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111816.8,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111816.8,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5458066145",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9b907dc259e59aceb7d3099",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111816.90",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753303475932",
+      "updateTime": "1753303475932"
+    },
+    "id": "5458066145",
+    "clientOrderId": "x-cvBPrNm9b907dc259e59aceb7d3099",
+    "timestamp": 1753303475932,
+    "datetime": "2025-07-23T20:44:35.932Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753303475932,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111816.9,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111816.9,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5458457970",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm97e75199eab93b97324d7c5",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111692.60",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753305663268",
+      "updateTime": "1753305663268"
+    },
+    "id": "5458457970",
+    "clientOrderId": "x-cvBPrNm97e75199eab93b97324d7c5",
+    "timestamp": 1753305663268,
+    "datetime": "2025-07-23T21:21:03.268Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753305663268,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111692.6,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111692.6,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5458513752",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9232a854b86ff50710db98a",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111685.80",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753305962951",
+      "updateTime": "1753305962951"
+    },
+    "id": "5458513752",
+    "clientOrderId": "x-cvBPrNm9232a854b86ff50710db98a",
+    "timestamp": 1753305962951,
+    "datetime": "2025-07-23T21:26:02.951Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753305962951,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111685.8,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111685.8,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5462925277",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm970fff07598d7b5183f510a",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111915.10",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753334494440",
+      "updateTime": "1753334494440"
+    },
+    "id": "5462925277",
+    "clientOrderId": "x-cvBPrNm970fff07598d7b5183f510a",
+    "timestamp": 1753334494440,
+    "datetime": "2025-07-24T05:21:34.440Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753334494440,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111915.1,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111915.1,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5462962592",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9b44ce305619ef0d79443fd",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111697.10",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753334733164",
+      "updateTime": "1753334733164"
+    },
+    "id": "5462962592",
+    "clientOrderId": "x-cvBPrNm9b44ce305619ef0d79443fd",
+    "timestamp": 1753334733164,
+    "datetime": "2025-07-24T05:25:33.164Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753334733164,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111697.1,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111697.1,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5464410715",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9f3f66bc60c92fd06d5a933",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "112128.50",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753343439195",
+      "updateTime": "1753343439195"
+    },
+    "id": "5464410715",
+    "clientOrderId": "x-cvBPrNm9f3f66bc60c92fd06d5a933",
+    "timestamp": 1753343439195,
+    "datetime": "2025-07-24T07:50:39.195Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753343439195,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 112128.5,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 112128.5,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5469272976",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm95823502a305fd239e706b2",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "112582.90",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753395275131",
+      "updateTime": "1753395275131"
+    },
+    "id": "5469272976",
+    "clientOrderId": "x-cvBPrNm95823502a305fd239e706b2",
+    "timestamp": 1753395275131,
+    "datetime": "2025-07-24T22:14:35.131Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753395275131,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 112582.9,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 112582.9,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5469272978",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm99ffd75702ecfcf3d3de3d7",
+      "price": "119811.90",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "LIMIT",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "0",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "LIMIT",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753395275404",
+      "updateTime": "1753395275404"
+    },
+    "id": "5469272978",
+    "clientOrderId": "x-cvBPrNm99ffd75702ecfcf3d3de3d7",
+    "timestamp": 1753395275404,
+    "datetime": "2025-07-24T22:14:35.404Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753395275404,
+    "symbol": "BTC/USDT:USDT",
+    "type": "limit",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": 119811.9,
+    "triggerPrice": null,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": null,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5469479673",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9dfdbdaa0e729be1798522f",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "112320.20",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753397555123",
+      "updateTime": "1753397555123"
+    },
+    "id": "5469479673",
+    "clientOrderId": "x-cvBPrNm9dfdbdaa0e729be1798522f",
+    "timestamp": 1753397555123,
+    "datetime": "2025-07-24T22:52:35.123Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753397555123,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 112320.2,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 112320.2,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5469479675",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm92934212fbce9baf2779815",
+      "price": "119532.30",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "LIMIT",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "0",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "LIMIT",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753397555401",
+      "updateTime": "1753397555401"
+    },
+    "id": "5469479675",
+    "clientOrderId": "x-cvBPrNm92934212fbce9baf2779815",
+    "timestamp": 1753397555401,
+    "datetime": "2025-07-24T22:52:35.401Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753397555401,
+    "symbol": "BTC/USDT:USDT",
+    "type": "limit",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": 119532.3,
+    "triggerPrice": null,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": null,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5470330647",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm956f5444c49bc7757cdd853",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111576.50",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753406794662",
+      "updateTime": "1753406794662"
+    },
+    "id": "5470330647",
+    "clientOrderId": "x-cvBPrNm956f5444c49bc7757cdd853",
+    "timestamp": 1753406794662,
+    "datetime": "2025-07-25T01:26:34.662Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753406794662,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111576.5,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111576.5,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5470330735",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm95f0c1a2a33e9cb9fd85843",
+      "price": "118740.90",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "LIMIT",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "0",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "LIMIT",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753406795414",
+      "updateTime": "1753406795414"
+    },
+    "id": "5470330735",
+    "clientOrderId": "x-cvBPrNm95f0c1a2a33e9cb9fd85843",
+    "timestamp": 1753406795414,
+    "datetime": "2025-07-25T01:26:35.414Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753406795414,
+    "symbol": "BTC/USDT:USDT",
+    "type": "limit",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": 118740.9,
+    "triggerPrice": null,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": null,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5470373747",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9cacdd18e71c830a9bc4b30",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111704.70",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753407213732",
+      "updateTime": "1753407213732"
+    },
+    "id": "5470373747",
+    "clientOrderId": "x-cvBPrNm9cacdd18e71c830a9bc4b30",
+    "timestamp": 1753407213732,
+    "datetime": "2025-07-25T01:33:33.732Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753407213732,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111704.7,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111704.7,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5470373753",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9bed6caea5298e7647d2f32",
+      "price": "118877.30",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "LIMIT",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "0",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "LIMIT",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753407213999",
+      "updateTime": "1753407213999"
+    },
+    "id": "5470373753",
+    "clientOrderId": "x-cvBPrNm9bed6caea5298e7647d2f32",
+    "timestamp": 1753407213999,
+    "datetime": "2025-07-25T01:33:33.999Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753407213999,
+    "symbol": "BTC/USDT:USDT",
+    "type": "limit",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": 118877.3,
+    "triggerPrice": null,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": null,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  }
+]
+2025-07-25 05:06:50,679 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 116066.7
+2025-07-25 05:06:51,426 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 116400.0
+2025-07-25 05:06:51,693 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 116400.0
+2025-07-25 05:06:51,954 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 118385.3
+2025-07-25 05:06:52,223 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 116400.0
+2025-07-25 05:06:52,964 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 116400.0
+2025-07-25 05:06:53,239 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 118385.3
+2025-07-25 05:06:53,984 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 118385.3
+2025-07-25 05:06:54,252 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 118385.3
+2025-07-25 05:06:54,519 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 118385.3
+2025-07-25 05:06:54,767 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 118385.3
+2025-07-25 05:06:55,046 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 118385.3
+2025-07-25 05:06:55,786 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 118385.3
+2025-07-25 05:06:55,786 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 119811.9
+2025-07-25 05:06:56,059 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 118385.3
+2025-07-25 05:06:56,060 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 119532.3
+2025-07-25 05:06:56,810 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 118385.3
+2025-07-25 05:06:56,811 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 118740.9
+2025-07-25 05:06:57,563 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 118391.4
+2025-07-25 05:06:57,564 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 118877.3
+2025-07-25 05:09:27,463 | [DEBUG] –ó–∞–≥—Ä—É–∂–µ–Ω—ã –ø–æ–∑–∏—Ü–∏–∏ –∏–∑ –ª–æ–≥–∞: 20
+2025-07-25 05:09:27,770 | [DEBUG] OPEN_ORDERS_RAW: [
+  {
+    "info": {
+      "orderId": "5457860873",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9594d0e1112a70b60c50a0d",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "112166.60",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753302471847",
+      "updateTime": "1753302471847"
+    },
+    "id": "5457860873",
+    "clientOrderId": "x-cvBPrNm9594d0e1112a70b60c50a0d",
+    "timestamp": 1753302471847,
+    "datetime": "2025-07-23T20:27:51.847Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753302471847,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 112166.6,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 112166.6,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5457872480",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm912652464996c7737a9f8e4",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "112166.60",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753302531752",
+      "updateTime": "1753302531752"
+    },
+    "id": "5457872480",
+    "clientOrderId": "x-cvBPrNm912652464996c7737a9f8e4",
+    "timestamp": 1753302531752,
+    "datetime": "2025-07-23T20:28:51.752Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753302531752,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 112166.6,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 112166.6,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5457920143",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm920ca9dbfe94b633ec3ae26",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "112063.10",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753302770692",
+      "updateTime": "1753302770692"
+    },
+    "id": "5457920143",
+    "clientOrderId": "x-cvBPrNm920ca9dbfe94b633ec3ae26",
+    "timestamp": 1753302770692,
+    "datetime": "2025-07-23T20:32:50.692Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753302770692,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 112063.1,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 112063.1,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5457991249",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9d2541ff00a3689d5e1765",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111876.10",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753303116326",
+      "updateTime": "1753303116326"
+    },
+    "id": "5457991249",
+    "clientOrderId": "x-cvBPrNm9d2541ff00a3689d5e1765",
+    "timestamp": 1753303116326,
+    "datetime": "2025-07-23T20:38:36.326Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753303116326,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111876.1,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111876.1,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5458030829",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm941cff54415d99f2ce16abf",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111761.80",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753303296893",
+      "updateTime": "1753303296893"
+    },
+    "id": "5458030829",
+    "clientOrderId": "x-cvBPrNm941cff54415d99f2ce16abf",
+    "timestamp": 1753303296893,
+    "datetime": "2025-07-23T20:41:36.893Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753303296893,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111761.8,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111761.8,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5458053829",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9564b06f322a64595141b9e",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111816.80",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753303415383",
+      "updateTime": "1753303415383"
+    },
+    "id": "5458053829",
+    "clientOrderId": "x-cvBPrNm9564b06f322a64595141b9e",
+    "timestamp": 1753303415383,
+    "datetime": "2025-07-23T20:43:35.383Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753303415383,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111816.8,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111816.8,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5458066145",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9b907dc259e59aceb7d3099",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111816.90",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753303475932",
+      "updateTime": "1753303475932"
+    },
+    "id": "5458066145",
+    "clientOrderId": "x-cvBPrNm9b907dc259e59aceb7d3099",
+    "timestamp": 1753303475932,
+    "datetime": "2025-07-23T20:44:35.932Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753303475932,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111816.9,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111816.9,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5458457970",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm97e75199eab93b97324d7c5",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111692.60",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753305663268",
+      "updateTime": "1753305663268"
+    },
+    "id": "5458457970",
+    "clientOrderId": "x-cvBPrNm97e75199eab93b97324d7c5",
+    "timestamp": 1753305663268,
+    "datetime": "2025-07-23T21:21:03.268Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753305663268,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111692.6,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111692.6,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5458513752",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9232a854b86ff50710db98a",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111685.80",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753305962951",
+      "updateTime": "1753305962951"
+    },
+    "id": "5458513752",
+    "clientOrderId": "x-cvBPrNm9232a854b86ff50710db98a",
+    "timestamp": 1753305962951,
+    "datetime": "2025-07-23T21:26:02.951Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753305962951,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111685.8,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111685.8,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5462925277",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm970fff07598d7b5183f510a",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111915.10",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753334494440",
+      "updateTime": "1753334494440"
+    },
+    "id": "5462925277",
+    "clientOrderId": "x-cvBPrNm970fff07598d7b5183f510a",
+    "timestamp": 1753334494440,
+    "datetime": "2025-07-24T05:21:34.440Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753334494440,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111915.1,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111915.1,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5462962592",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9b44ce305619ef0d79443fd",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111697.10",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753334733164",
+      "updateTime": "1753334733164"
+    },
+    "id": "5462962592",
+    "clientOrderId": "x-cvBPrNm9b44ce305619ef0d79443fd",
+    "timestamp": 1753334733164,
+    "datetime": "2025-07-24T05:25:33.164Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753334733164,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111697.1,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111697.1,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5464410715",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9f3f66bc60c92fd06d5a933",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "112128.50",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753343439195",
+      "updateTime": "1753343439195"
+    },
+    "id": "5464410715",
+    "clientOrderId": "x-cvBPrNm9f3f66bc60c92fd06d5a933",
+    "timestamp": 1753343439195,
+    "datetime": "2025-07-24T07:50:39.195Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753343439195,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 112128.5,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 112128.5,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5469272976",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm95823502a305fd239e706b2",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "112582.90",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753395275131",
+      "updateTime": "1753395275131"
+    },
+    "id": "5469272976",
+    "clientOrderId": "x-cvBPrNm95823502a305fd239e706b2",
+    "timestamp": 1753395275131,
+    "datetime": "2025-07-24T22:14:35.131Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753395275131,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 112582.9,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 112582.9,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5469272978",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm99ffd75702ecfcf3d3de3d7",
+      "price": "119811.90",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "LIMIT",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "0",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "LIMIT",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753395275404",
+      "updateTime": "1753395275404"
+    },
+    "id": "5469272978",
+    "clientOrderId": "x-cvBPrNm99ffd75702ecfcf3d3de3d7",
+    "timestamp": 1753395275404,
+    "datetime": "2025-07-24T22:14:35.404Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753395275404,
+    "symbol": "BTC/USDT:USDT",
+    "type": "limit",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": 119811.9,
+    "triggerPrice": null,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": null,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5469479673",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9dfdbdaa0e729be1798522f",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "112320.20",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753397555123",
+      "updateTime": "1753397555123"
+    },
+    "id": "5469479673",
+    "clientOrderId": "x-cvBPrNm9dfdbdaa0e729be1798522f",
+    "timestamp": 1753397555123,
+    "datetime": "2025-07-24T22:52:35.123Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753397555123,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 112320.2,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 112320.2,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5469479675",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm92934212fbce9baf2779815",
+      "price": "119532.30",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "LIMIT",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "0",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "LIMIT",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753397555401",
+      "updateTime": "1753397555401"
+    },
+    "id": "5469479675",
+    "clientOrderId": "x-cvBPrNm92934212fbce9baf2779815",
+    "timestamp": 1753397555401,
+    "datetime": "2025-07-24T22:52:35.401Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753397555401,
+    "symbol": "BTC/USDT:USDT",
+    "type": "limit",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": 119532.3,
+    "triggerPrice": null,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": null,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5470330647",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm956f5444c49bc7757cdd853",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111576.50",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753406794662",
+      "updateTime": "1753406794662"
+    },
+    "id": "5470330647",
+    "clientOrderId": "x-cvBPrNm956f5444c49bc7757cdd853",
+    "timestamp": 1753406794662,
+    "datetime": "2025-07-25T01:26:34.662Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753406794662,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111576.5,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111576.5,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5470330735",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm95f0c1a2a33e9cb9fd85843",
+      "price": "118740.90",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "LIMIT",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "0",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "LIMIT",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753406795414",
+      "updateTime": "1753406795414"
+    },
+    "id": "5470330735",
+    "clientOrderId": "x-cvBPrNm95f0c1a2a33e9cb9fd85843",
+    "timestamp": 1753406795414,
+    "datetime": "2025-07-25T01:26:35.414Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753406795414,
+    "symbol": "BTC/USDT:USDT",
+    "type": "limit",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": 118740.9,
+    "triggerPrice": null,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": null,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5470373747",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9cacdd18e71c830a9bc4b30",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "111704.70",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753407213732",
+      "updateTime": "1753407213732"
+    },
+    "id": "5470373747",
+    "clientOrderId": "x-cvBPrNm9cacdd18e71c830a9bc4b30",
+    "timestamp": 1753407213732,
+    "datetime": "2025-07-25T01:33:33.732Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753407213732,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 111704.7,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 111704.7,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5470373753",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9bed6caea5298e7647d2f32",
+      "price": "118877.30",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "LIMIT",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "0",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "LIMIT",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753407213999",
+      "updateTime": "1753407213999"
+    },
+    "id": "5470373753",
+    "clientOrderId": "x-cvBPrNm9bed6caea5298e7647d2f32",
+    "timestamp": 1753407213999,
+    "datetime": "2025-07-25T01:33:33.999Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753407213999,
+    "symbol": "BTC/USDT:USDT",
+    "type": "limit",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": 118877.3,
+    "triggerPrice": null,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": null,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  }
+]
+2025-07-25 05:16:48,392 | [DEBUG] –ó–∞–≥—Ä—É–∂–µ–Ω—ã –ø–æ–∑–∏—Ü–∏–∏ –∏–∑ –ª–æ–≥–∞: 20
+2025-07-25 05:16:48,663 | [DEBUG] OPEN_ORDERS_RAW: []
+2025-07-25 05:16:48,664 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5457860873 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,665 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5457872480 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,666 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5457920143 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,667 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5457991249 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,668 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5458030829 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,669 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5458053829 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,670 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5458066145 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,674 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5458457970 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,676 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5458513752 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,677 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5462925277 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,679 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5462962592 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,680 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5464410715 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,681 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5469272976 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,683 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5469272978 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,684 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5469479673 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,685 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5469479675 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,687 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5470330647 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,688 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5470330735 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,689 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5470373747 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:16:48,692 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5470373753 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:32:04,737 | OCO_ORDER_SET | BTC/USDT | TP=117062.07 | SL=109998.98
+2025-07-25 05:32:04,737 | OCO_ORDER_SET | BTC/USDT | TP=117062.07 | SL=109998.98
+2025-07-25 05:32:04,737 | FUTURES_OPEN | BTC/USDT | BUY | 0.0014 @ 115788.4
+2025-07-25 05:32:04,737 | FUTURES_OPEN | BTC/USDT | BUY | 0.0014 @ 115788.4
+2025-07-25 05:32:04,752 | OPEN BUY BTC/USDT @ 115788.4 | AMOUNT=0.001 BTC | TP=117062.07 | SL=109998.98
+2025-07-25 05:32:04,752 | OPEN BUY BTC/USDT @ 115788.4 | AMOUNT=0.001 BTC | TP=117062.07 | SL=109998.98
+2025-07-25 05:34:02,878 | OCO_ORDER_SET | BTC/USDT | TP=116589.43 | SL=109554.85
+2025-07-25 05:34:02,878 | OCO_ORDER_SET | BTC/USDT | TP=116589.43 | SL=109554.85
+2025-07-25 05:34:02,888 | FUTURES_OPEN | BTC/USDT | BUY | 0.0014 @ 115499.9
+2025-07-25 05:34:02,888 | FUTURES_OPEN | BTC/USDT | BUY | 0.0014 @ 115499.9
+2025-07-25 05:34:02,888 | OPEN BUY BTC/USDT @ 115320.9 | AMOUNT=0.001 BTC | TP=116589.43 | SL=109554.85
+2025-07-25 05:34:02,888 | OPEN BUY BTC/USDT @ 115320.9 | AMOUNT=0.001 BTC | TP=116589.43 | SL=109554.85
+2025-07-25 05:38:02,867 | OCO_ORDER_SET | BTC/USDT | TP=116386.42 | SL=109364.1
+2025-07-25 05:38:02,867 | OCO_ORDER_SET | BTC/USDT | TP=116386.42 | SL=109364.1
+2025-07-25 05:38:02,867 | FUTURES_OPEN | BTC/USDT | BUY | 0.0014 @ 115328.3
+2025-07-25 05:38:02,867 | FUTURES_OPEN | BTC/USDT | BUY | 0.0014 @ 115328.3
+2025-07-25 05:38:02,867 | OPEN BUY BTC/USDT @ 115120.1 | AMOUNT=0.001 BTC | TP=116386.42 | SL=109364.1
+2025-07-25 05:38:02,867 | OPEN BUY BTC/USDT @ 115120.1 | AMOUNT=0.001 BTC | TP=116386.42 | SL=109364.1
+2025-07-25 05:39:21,362 | [DEBUG] –ó–∞–≥—Ä—É–∂–µ–Ω—ã –ø–æ–∑–∏—Ü–∏–∏ –∏–∑ –ª–æ–≥–∞: 3
+2025-07-25 05:39:22,131 | [DEBUG] OPEN_ORDERS_RAW: [
+  {
+    "info": {
+      "orderId": "5471060641",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9968f82b430ef3a0a7e442d",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "109999",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753414324008",
+      "updateTime": "1753414324008"
+    },
+    "id": "5471060641",
+    "clientOrderId": "x-cvBPrNm9968f82b430ef3a0a7e442d",
+    "timestamp": 1753414324008,
+    "datetime": "2025-07-25T03:32:04.008Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753414324008,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 109999.0,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 109999.0,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5471071397",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9863f64f24f20d9b90ffd9c",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "109554.80",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753414442143",
+      "updateTime": "1753414442143"
+    },
+    "id": "5471071397",
+    "clientOrderId": "x-cvBPrNm9863f64f24f20d9b90ffd9c",
+    "timestamp": 1753414442143,
+    "datetime": "2025-07-25T03:34:02.143Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753414442143,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 109554.8,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 109554.8,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5471071407",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9d7deb638058e5def869b8a",
+      "price": "116589.40",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "LIMIT",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "0",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "LIMIT",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753414442414",
+      "updateTime": "1753414442414"
+    },
+    "id": "5471071407",
+    "clientOrderId": "x-cvBPrNm9d7deb638058e5def869b8a",
+    "timestamp": 1753414442414,
+    "datetime": "2025-07-25T03:34:02.414Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753414442414,
+    "symbol": "BTC/USDT:USDT",
+    "type": "limit",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": 116589.4,
+    "triggerPrice": null,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": null,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5471085945",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm915ce67fe86c5d51c94b384",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "109364.10",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753414681647",
+      "updateTime": "1753414681647"
+    },
+    "id": "5471085945",
+    "clientOrderId": "x-cvBPrNm915ce67fe86c5d51c94b384",
+    "timestamp": 1753414681647,
+    "datetime": "2025-07-25T03:38:01.647Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753414681647,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 109364.1,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 109364.1,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5471085957",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm99950f26eb196acd39f9cf2",
+      "price": "116386.40",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "LIMIT",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "0",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "LIMIT",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753414682395",
+      "updateTime": "1753414682395"
+    },
+    "id": "5471085957",
+    "clientOrderId": "x-cvBPrNm99950f26eb196acd39f9cf2",
+    "timestamp": 1753414682395,
+    "datetime": "2025-07-25T03:38:02.395Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753414682395,
+    "symbol": "BTC/USDT:USDT",
+    "type": "limit",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": 116386.4,
+    "triggerPrice": null,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": null,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  }
+]
+2025-07-25 05:39:22,894 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 115158.7
+2025-07-25 05:39:23,651 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 115158.7
+2025-07-25 05:39:23,651 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 116589.4
+2025-07-25 05:39:23,927 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 115158.6
+2025-07-25 05:39:23,927 | SYNC_POSITION | BTC/USDT:USDT | sell | 0.001 @ 116386.4
+2025-07-25 05:39:23,927 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5471060607 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:39:23,927 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5471071360 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:39:23,927 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5471085907 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:48:00,673 | [DEBUG] –ó–∞–≥—Ä—É–∂–µ–Ω—ã –ø–æ–∑–∏—Ü–∏–∏ –∏–∑ –ª–æ–≥–∞: 5
+2025-07-25 05:48:00,946 | [DEBUG] OPEN_ORDERS_RAW: [
+  {
+    "info": {
+      "orderId": "5471060641",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9968f82b430ef3a0a7e442d",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "109999",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753414324008",
+      "updateTime": "1753414324008"
+    },
+    "id": "5471060641",
+    "clientOrderId": "x-cvBPrNm9968f82b430ef3a0a7e442d",
+    "timestamp": 1753414324008,
+    "datetime": "2025-07-25T03:32:04.008Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753414324008,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 109999.0,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 109999.0,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5471071397",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm9863f64f24f20d9b90ffd9c",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "109554.80",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753414442143",
+      "updateTime": "1753414442143"
+    },
+    "id": "5471071397",
+    "clientOrderId": "x-cvBPrNm9863f64f24f20d9b90ffd9c",
+    "timestamp": 1753414442143,
+    "datetime": "2025-07-25T03:34:02.143Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753414442143,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 109554.8,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 109554.8,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  },
+  {
+    "info": {
+      "orderId": "5471085945",
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "x-cvBPrNm915ce67fe86c5d51c94b384",
+      "price": "0",
+      "avgPrice": "0",
+      "origQty": "0.001",
+      "executedQty": "0",
+      "cumQuote": "0.00000",
+      "timeInForce": "GTC",
+      "type": "STOP_MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "109364.10",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "STOP_MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": "0",
+      "time": "1753414681647",
+      "updateTime": "1753414681647"
+    },
+    "id": "5471085945",
+    "clientOrderId": "x-cvBPrNm915ce67fe86c5d51c94b384",
+    "timestamp": 1753414681647,
+    "datetime": "2025-07-25T03:38:01.647Z",
+    "lastTradeTimestamp": null,
+    "lastUpdateTimestamp": 1753414681647,
+    "symbol": "BTC/USDT:USDT",
+    "type": "stop_market",
+    "timeInForce": "GTC",
+    "postOnly": false,
+    "reduceOnly": false,
+    "side": "sell",
+    "price": null,
+    "triggerPrice": 109364.1,
+    "amount": 0.001,
+    "cost": 0.0,
+    "average": null,
+    "filled": 0.0,
+    "remaining": 0.001,
+    "status": "open",
+    "fee": null,
+    "trades": [],
+    "fees": [],
+    "stopPrice": 109364.1,
+    "takeProfitPrice": null,
+    "stopLossPrice": null
+  }
+]
+2025-07-25 05:48:02,737 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5471071407 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
+2025-07-25 05:48:02,738 | SYNC_REMOVE | –û—Ä–¥–µ—Ä 5471085957 —É–¥–∞–ª—ë–Ω (–Ω–µ –Ω–∞–π–¥–µ–Ω –Ω–∞ –±–∏—Ä–∂–µ)
