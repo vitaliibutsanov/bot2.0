@@ -1,8 +1,8 @@
 {
   "initial_balance": 1000,
-  "balance": 16293.97361078,
+  "balance": 16303.97361078,
   "buy_count": 6,
-  "sell_count": 0,
+  "sell_count": 1,
   "history": [
     {
       "time": "2025-07-25T05:32:03.172313",
@@ -33,6 +33,11 @@
       "time": "2025-07-25T05:38:02.867772",
       "pnl": 0,
       "type": "BUY"
+    },
+    {
+      "time": "2025-07-25T21:59:01.144548",
+      "pnl": 10,
+      "type": "SELL"
     }
   ]
 }

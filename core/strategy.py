@@ -1,4 +1,4 @@
-import time 
+import time  
 import pandas as pd
 import ta
 from ta.volatility import BollingerBands, AverageTrueRange
@@ -10,6 +10,9 @@ from log_config import signals_logger  # Логгер сигналов
 _last_signal = None
 _last_signal_time = 0
 SIGNAL_CACHE_TIME = 60  # 60 секунд
+
+# Новый параметр для динамического ATR-фильтра
+ATR_DYNAMIC_MULT = 2.5  # если диапазон свечи > ATR * 2.5 — рынок нестабилен
 
 
 def get_technical_indicators(symbol: str, timeframe='1m', limit=50):
@@ -58,12 +61,19 @@ def analyze_market_smart(symbol='BTC/USDT', timeframe='1h', limit=50):
             binance.fetch_ohlcv(symbol, timeframe=timeframe, limit=20),
             columns=['time', 'open', 'high', 'low', 'close', 'volume']
         )
-        atr = AverageTrueRange(high=df['high'], low=df['low'], close=df['close'], window=14).average_true_range().iloc[-1]
+        atr_series = AverageTrueRange(high=df['high'], low=df['low'], close=df['close'], window=14)
+        atr = atr_series.average_true_range().iloc[-1]
 
-        # === Проверка на высокий ATR (волатильный рынок) ===
-        if atr > ATR_THRESHOLD:
-            signals_logger.warning(f"TRADE_BLOCKED | ATR={atr:.3f} > {ATR_THRESHOLD} (волатильный рынок)")
-            return f"⚠ Рынок слишком волатильный (ATR={atr:.2f}) — торговля приостановлена."
+        # === Лог ATR и диапазона текущей свечи ===
+        last_high = df['high'].iloc[-1]
+        last_low = df['low'].iloc[-1]
+        current_range = last_high - last_low
+        signals_logger.info(f"ATR_CHECK | ATR={atr:.2f} | Range={current_range:.2f} | TH={ATR_THRESHOLD}")
+
+        # === Проверка на экстремальную волатильность ===
+        if current_range > atr * ATR_DYNAMIC_MULT:
+            signals_logger.warning(f"TRADE_CAUTION | Слишком высокая волатильность! Range={current_range:.2f} > {atr * ATR_DYNAMIC_MULT:.2f}")
+            return f"⚠ Рынок слишком волатильный (ATR={atr:.2f}, Range={current_range:.2f}) — осторожно."
 
         # Позиция цены относительно Bollinger Bands
         price_position = "🔹 Цена между уровнями BB"
@@ -127,7 +137,7 @@ def analyze_market_smart(symbol='BTC/USDT', timeframe='1h', limit=50):
             f"{signal}\n{price_position}\n"
             f"📉 RSI: {rsi:.2f}\n"
             f"📏 EMA: {ema:.2f}\n"
-            f"⚡ ATR: {atr:.2f}\n"
+            f"⚡ ATR: {atr:.2f} (Range={current_range:.2f})\n"
             f"📊 Объём: {volume:.2f}\n"
             f"🌟 Доверие: {confidence}/5"
         )

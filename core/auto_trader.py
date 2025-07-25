@@ -1,4 +1,4 @@
-import logging
+import logging 
 from time import time
 from core.order_manager import futures_manager
 from core.strategy import analyze_market_smart
@@ -21,16 +21,61 @@ ANOMALY_THRESHOLD = 0.015  # 1.5%
 SIGNAL_CACHE_TIME = 60
 verbose_signals = False
 
+# === Новый флаг автотрейдинга ===
+AUTO_TRADING_ENABLED = False  # Теперь по умолчанию выключен
+
+# === Новый флаг ATR ===
+USE_ATR_FOR_VOLATILITY = True
+ATR_PERIOD = 14
+TP_ATR_MULT = 1.5
+SL_ATR_MULT = 2.0
+
+
+def calculate_atr(symbol: str, period=ATR_PERIOD):
+    """Вычисляет ATR на основе OHLCV данных."""
+    try:
+        ohlcv = futures_manager.get_recent_ohlcv(symbol, timeframe="1m", limit=period + 1)
+        if not ohlcv or len(ohlcv) < period:
+            return None
+
+        trs = []
+        for i in range(1, len(ohlcv)):
+            high = ohlcv[i][2]
+            low = ohlcv[i][3]
+            prev_close = ohlcv[i - 1][4]
+            tr = max(high - low, abs(high - prev_close), abs(low - prev_close))
+            trs.append(tr)
+        atr = sum(trs) / len(trs)
+        return atr
+    except Exception as e:
+        logging.error(f"ATR_CALC_ERROR | {e}")
+        return None
+
 
 def is_anomalous_move(symbol: str, price: float):
-    """Фильтр для защиты от резких скачков цены."""
+    """Фильтр для защиты от резких скачков цены с использованием ATR."""
     try:
-        ohlcv = futures_manager.get_recent_ohlcv(symbol, limit=2)
-        if ohlcv and len(ohlcv) > 1:
-            last_candle = ohlcv[-1]
-            candle_open = last_candle[1]
-            if candle_open > 0 and abs(price - candle_open) / candle_open > ANOMALY_THRESHOLD:
+        if USE_ATR_FOR_VOLATILITY:
+            atr = calculate_atr(symbol)
+            if not atr:
+                return False
+            ohlcv = futures_manager.get_recent_ohlcv(symbol, limit=1)
+            if not ohlcv:
+                return False
+            current_high = ohlcv[-1][2]
+            current_low = ohlcv[-1][3]
+            current_range = current_high - current_low
+            logging.info(f"[ATR_CHECK] ATR={atr:.2f} | Range={current_range:.2f}")
+            if current_range > atr * 2.5:
                 return True
+            return False
+        else:
+            ohlcv = futures_manager.get_recent_ohlcv(symbol, limit=2)
+            if ohlcv and len(ohlcv) > 1:
+                last_candle = ohlcv[-1]
+                candle_open = last_candle[1]
+                if candle_open > 0 and abs(price - candle_open) / candle_open > ANOMALY_THRESHOLD:
+                    return True
     except Exception as e:
         logging.error(f"ANOMALY_CHECK_ERROR | {e}")
     return False
@@ -102,12 +147,23 @@ async def auto_trade_cycle(context):
     symbol = "BTC/USDT"
 
     try:
+        if not AUTO_TRADING_ENABLED:
+            logging.info("AUTO_TRADE | Автотрейдинг отключен, цикл пропущен.")
+            return
+
+        try:
+            real_balance = futures_manager.get_balance("USDT")
+            if abs(virtual_portfolio.balance - real_balance) > 0.01:
+                virtual_portfolio.balance = real_balance
+                logging.info(f"[SYNC] Баланс виртуального портфеля обновлен: {real_balance:.2f} USDT")
+        except Exception as e:
+            logging.error(f"[PORTFOLIO_SYNC_ERROR] {e}")
+
         if not futures_manager.active_positions:
             await sync_open_positions(context)
         else:
             await notify_position_change(context)
 
-        # === Анализ рынка ===
         try:
             signal = analyze_market_smart(symbol)
             if not signal or "❌" in signal:
@@ -116,7 +172,6 @@ async def auto_trade_cycle(context):
             logging.error(f"ANALYZE_ERROR | {e}")
             return
 
-        # === Fallback на адаптивную стратегию ===
         if "СИГНАЛ" not in signal and "СЛАБЫЙ" not in signal:
             try:
                 signal = get_adaptive_signal(symbol)
@@ -128,11 +183,19 @@ async def auto_trade_cycle(context):
         if price is None:
             return
 
+        # === Проверка экстремальной волатильности через risk_manager ===
+        try:
+            volatile, reason = risk_manager.is_market_volatile(symbol)
+            if volatile:
+                logging.warning(f"TRADE_BLOCKED | {reason}")
+                return
+        except Exception as e:
+            logging.error(f"VOLATILITY_CHECK_ERROR | {e}")
+
         if is_anomalous_move(symbol, price):
             logging.warning(f"ANOMALY_MOVE | {symbol} | {price}")
             return
 
-        # === Проверка доверия к сигналу ===
         confidence = 0
         try:
             conf_index = signal.find("Доверие:")
@@ -141,7 +204,6 @@ async def auto_trade_cycle(context):
         except Exception:
             confidence = 0
 
-        # === Защита от спама сигналами ===
         now = time()
         if signal == last_signal and (now - last_signal_time < SIGNAL_CACHE_TIME):
             if verbose_signals:
@@ -156,13 +218,16 @@ async def auto_trade_cycle(context):
             logging.warning(f"TRADE_BLOCKED | {reason}")
             return
 
-        # === Логика открытия позиции ===
         if "ПОКУПАТЬ" in signal and confidence >= 2:
             if len(futures_manager.active_positions) < MAX_POSITIONS:
-                tp_price = round(price * (1 + TP_PERCENT), 2)
-                sl_price = round(price * (1 - SL_PERCENT), 2)
+                atr = calculate_atr(symbol) if USE_ATR_FOR_VOLATILITY else None
+                if atr:
+                    tp_price = round(price + atr * TP_ATR_MULT, 2)
+                    sl_price = round(price - atr * SL_ATR_MULT, 2)
+                else:
+                    tp_price = round(price * (1 + TP_PERCENT), 2)
+                    sl_price = round(price * (1 - SL_PERCENT), 2)
 
-                # Проверка маржи перед открытием позиции
                 required_margin = balance * risk_manager.max_trade_percent
                 if balance < required_margin:
                     await safe_send_message(
@@ -179,7 +244,9 @@ async def auto_trade_cycle(context):
                     )
                     if success:
                         amt = order.get("amount", "?")
+                        logging.info(f"[DEBUG] Перед записью BUY в портфель: {amt} BTC @ {price}")
                         virtual_portfolio.apply_trade(0, "BUY")
+                        logging.info(f"[DEBUG] После записи BUY в портфель: баланс={virtual_portfolio.balance:.2f}")
                         msg = (f"✅ BUY {symbol} @ {price} | AMOUNT={amt} BTC | "
                                f"TP={tp_price} | SL={sl_price} | Active={len(futures_manager.active_positions)}")
                         trades_logger.info(
@@ -194,7 +261,6 @@ async def auto_trade_cycle(context):
             else:
                 logging.info(f"MAX_POSITIONS | Лимит {MAX_POSITIONS} позиций.")
 
-        # === Логика закрытия позиции ===
         elif "ПРОДАВАТЬ" in signal and futures_manager.active_positions:
             try:
                 pid = next(iter(futures_manager.active_positions))
@@ -205,7 +271,9 @@ async def auto_trade_cycle(context):
                 success, msg = await futures_manager.close_position(pid)
                 if success:
                     pnl = (price - entry_price) * amount
+                    logging.info(f"[DEBUG] Перед записью SELL: pnl={pnl:.2f}")
                     virtual_portfolio.apply_trade(pnl, "SELL")
+                    logging.info(f"[DEBUG] После записи SELL: баланс={virtual_portfolio.balance:.2f}")
 
                     msg = (f"✅ SELL {symbol} @ {price} | PnL={pnl:.2f} USDT | "
                            f"Balance={virtual_portfolio.balance:.2f} USDT | "

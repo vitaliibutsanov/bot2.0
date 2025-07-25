@@ -1,7 +1,10 @@
-import logging
+import logging 
 from datetime import datetime, timedelta
 from config import TRADE_PERCENT
-from core.strategy import get_technical_indicators  # Для проверки RSI и ATR
+from core.strategy import get_technical_indicators  # Для проверки RSI
+from ta.volatility import AverageTrueRange
+import pandas as pd
+from config import binance
 
 
 class RiskManager:
@@ -11,13 +14,15 @@ class RiskManager:
                  max_trade_percent=TRADE_PERCENT, 
                  min_rsi=25, 
                  max_rsi=75, 
-                 max_atr_ratio=0.02):
+                 max_atr_ratio=0.02,
+                 atr_dynamic_mult=2.5):
         """
         max_loss_streak - максимум подряд убыточных сделок до паузы.
         max_drawdown - максимальная просадка баланса (0.2 = 20%).
         max_trade_percent - доля депозита на сделку (например, 0.05 = 5%).
         min_rsi, max_rsi - фильтры RSI.
         max_atr_ratio - ограничение ATR (относительная волатильность).
+        atr_dynamic_mult - динамический множитель для фильтра волатильности.
         """
         self.loss_streak = 0
         self.max_loss_streak = max_loss_streak
@@ -28,7 +33,42 @@ class RiskManager:
         self.balance_start = None
         self.min_rsi = min_rsi
         self.max_rsi = max_rsi
-        self.max_atr_ratio = max_atr_ratio  # ATR/цена > 2% — торговля стоп
+        self.max_atr_ratio = max_atr_ratio
+        self.atr_dynamic_mult = atr_dynamic_mult
+
+    def is_market_volatile(self, symbol="BTC/USDT", timeframe='1h'):
+        """
+        Проверка: не слишком ли волатильный рынок по ATR.
+        Возвращает (bool, message).
+        """
+        try:
+            df = pd.DataFrame(
+                binance.fetch_ohlcv(symbol, timeframe=timeframe, limit=20),
+                columns=['time', 'open', 'high', 'low', 'close', 'volume']
+            )
+            atr_series = AverageTrueRange(
+                high=df['high'], low=df['low'], close=df['close'], window=14
+            ).average_true_range()
+
+            atr = atr_series.iloc[-1]
+            price = df['close'].iloc[-1]
+            atr_ratio = atr / price
+
+            last_range = df['high'].iloc[-1] - df['low'].iloc[-1]
+            if last_range > atr * self.atr_dynamic_mult:
+                msg = (f"ATR={atr:.4f}, Range={last_range:.2f} — рынок экстремально волатилен.")
+                logging.warning(f"VOLATILITY_BLOCK | {msg}")
+                return True, msg
+
+            if atr_ratio > self.max_atr_ratio:
+                msg = f"ATR={atr_ratio:.3f} > {self.max_atr_ratio:.3f} (волатильный рынок)."
+                logging.warning(f"VOLATILITY_WARN | {msg}")
+                return True, msg
+
+            return False, None
+        except Exception as e:
+            logging.error(f"ATR_CHECK_ERROR | {e}")
+            return False, None
 
     def check_trade_permission(self, balance, symbol="BTC/USDT"):
         """Проверка: можно ли открывать сделки сейчас."""
@@ -43,12 +83,14 @@ class RiskManager:
         try:
             price, rsi, bb_high, bb_low, volume = get_technical_indicators(symbol)
             if price and rsi:
+                # Проверка RSI
                 if rsi < self.min_rsi or rsi > self.max_rsi:
                     return False, f"RSI={rsi:.2f} вне допустимого диапазона [{self.min_rsi}-{self.max_rsi}]."
 
-                atr = abs(bb_high - bb_low) / price
-                if atr > self.max_atr_ratio:
-                    return False, f"ATR={atr:.3f} слишком высок (волатильный рынок)."
+                # Проверка ATR
+                volatile, msg = self.is_market_volatile(symbol)
+                if volatile:
+                    return False, msg
         except Exception as e:
             logging.error(f"RISK_INDICATOR_CHECK_ERROR | {e}")
 

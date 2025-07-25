@@ -7,8 +7,12 @@ from telegram.ext import CommandHandler, CallbackContext, Application
 from config import TELEGRAM_TOKEN, binance
 from core.portfolio import get_portfolio_status
 from core.strategy import analyze_market_smart
-from core.order_manager import auto_command, futures_manager
+from core.order_manager import futures_manager
 from utils.safe_send import safe_send_message
+
+# Импортируем флаг автотрейдинга и risk_manager
+from core import auto_trader
+from core.risk_manager import risk_manager
 
 logger = logging.getLogger(__name__)
 
@@ -16,15 +20,6 @@ logger = logging.getLogger(__name__)
 last_analyze_time = 0
 last_analyze_result = "❌ Данные анализа еще не получены."
 ANALYZE_CACHE_TIME = 60  # 1 минута
-
-# ====== Кэш для команды /report ======
-last_report_time = 0
-last_report_result = "❌ Отчёт еще не сформирован."
-REPORT_CACHE_TIME = 60  # 1 минута
-
-# Флаг автотрейдинга
-AUTO_TRADING = False
-
 
 # ====== Универсальный метод отправки ======
 async def send_reply(update: Update, context: CallbackContext, text: str):
@@ -97,18 +92,29 @@ async def analyze_command(update: Update, context: CallbackContext):
 
 
 async def status_command(update: Update, context: CallbackContext):
-    global AUTO_TRADING
     try:
-        status = "ВКЛ" if AUTO_TRADING else "ВЫКЛ"
+        status = "ВКЛ" if auto_trader.AUTO_TRADING_ENABLED else "ВЫКЛ"
         balance = binance.fetch_balance()
         usdt_balance = balance['total'].get('USDT', 0)
         positions_count = len(futures_manager.active_positions)
+
+        # Проверка волатильности
+        try:
+            volatile, reason = risk_manager.is_market_volatile("BTC/USDT")
+            vol_status = "ВЫСОКАЯ" if volatile else "Нормальная"
+            vol_text = f"\nВолатильность: {vol_status}"
+            if volatile and reason:
+                vol_text += f" ({reason})"
+        except Exception as e:
+            logger.error(f"Ошибка проверки волатильности: {e}")
+            vol_text = "\nВолатильность: ошибка проверки"
 
         text = (
             f"🔴 Автотрейдинг {status}\n"
             f"Риск: 2.0%\n"
             f"Баланс: {usdt_balance:.2f} USDT\n"
             f"Активных позиций: {positions_count}"
+            f"{vol_text}"
         )
         await send_reply(update, context, text)
     except Exception as e:
@@ -116,9 +122,9 @@ async def status_command(update: Update, context: CallbackContext):
 
 
 async def auto_command_handler(update: Update, context: CallbackContext):
-    global AUTO_TRADING
-    AUTO_TRADING = not AUTO_TRADING
-    status = "включен" if AUTO_TRADING else "выключен"
+    """Переключает флаг автотрейдинга и синхронизирует его с auto_trader.AUTO_TRADING_ENABLED."""
+    auto_trader.AUTO_TRADING_ENABLED = not auto_trader.AUTO_TRADING_ENABLED
+    status = "включен" if auto_trader.AUTO_TRADING_ENABLED else "выключен"
     await send_reply(update, context, f"Автотрейдинг {status}.")
 
 
@@ -137,13 +143,10 @@ async def positions_command(update: Update, context: CallbackContext):
 
 
 async def report_command(update: Update, context: CallbackContext):
-    global last_report_time, last_report_result
     try:
-        now = time.time()
-        if now - last_report_time > REPORT_CACHE_TIME:
-            last_report_result = get_portfolio_status()
-            last_report_time = now
-        await send_reply(update, context, last_report_result)
+        report_text = get_portfolio_status()  # всегда обновляем данные
+        await send_reply(update, context, report_text)
+        logger.info(f"[REPORT] Отчёт отправлен: {report_text}")
     except Exception as e:
         await send_reply(update, context, f"⚠ Ошибка отчета: {e}")
 

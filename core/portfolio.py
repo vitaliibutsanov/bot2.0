@@ -1,9 +1,9 @@
 import logging
-from datetime import datetime, timedelta
 import os
 import json
-from core.risk_manager import risk_manager  # Связь с системой рисков
-from config import binance  # Чтобы подтягивать актуальный баланс
+from datetime import datetime, timedelta
+from core.risk_manager import risk_manager
+from config import binance
 
 PORTFOLIO_FILE = "logs/portfolio.json"
 
@@ -12,16 +12,16 @@ class VirtualPortfolio:
     def __init__(self, initial_balance=1000):
         self.initial_balance = initial_balance
         self.balance = initial_balance
-        self.history = []  # [(datetime, pnl_usdt, type)]
+        self.history = []  # [(datetime, pnl, type)]
         self.buy_count = 0
         self.sell_count = 0
         self._load_portfolio()
-        # Инициализируем risk_manager стартовым балансом
+
         if risk_manager.balance_start is None:
             risk_manager.balance_start = self.balance
 
     def _save_portfolio(self):
-        """Сохраняет текущее состояние портфеля в файл."""
+        """Сохраняет состояние портфеля в JSON."""
         try:
             os.makedirs("logs", exist_ok=True)
             data = {
@@ -30,8 +30,8 @@ class VirtualPortfolio:
                 "buy_count": self.buy_count,
                 "sell_count": self.sell_count,
                 "history": [
-                    {"time": t.isoformat(), "pnl": pnl, "type": trade_type}
-                    for (t, pnl, trade_type) in self.history
+                    {"time": t.isoformat(), "pnl": pnl, "type": t_type}
+                    for t, pnl, t_type in self.history
                 ],
             }
             with open(PORTFOLIO_FILE, "w", encoding="utf-8") as f:
@@ -50,31 +50,20 @@ class VirtualPortfolio:
                 self.buy_count = data.get("buy_count", 0)
                 self.sell_count = data.get("sell_count", 0)
                 self.history = [
-                    (
-                        datetime.fromisoformat(item["time"]),
-                        item["pnl"],
-                        item["type"],
-                    )
+                    (datetime.fromisoformat(item["time"]), item["pnl"], item["type"])
                     for item in data.get("history", [])
                 ]
-                logging.info(f"[DEBUG] Загружен виртуальный портфель. Баланс: {self.balance:.2f} USDT")
-
-            # --- СИНХРОНИЗАЦИЯ С BINANCE ---
             self._sync_with_binance_balance()
-
         except Exception as e:
             logging.error(f"PORTFOLIO_LOAD_ERROR | {e}")
             self._reset_portfolio()
 
     def _sync_with_binance_balance(self):
-        """Сравнивает баланс портфеля с балансом Binance и синхронизирует при большой разнице."""
+        """Синхронизация с балансом Binance."""
         try:
             real_balance = binance.fetch_balance().get("total", {}).get("USDT", self.balance)
-            if abs(real_balance - self.balance) > self.balance * 0.1:  # Разница более 10%
-                logging.warning(
-                    f"[SYNC] Баланс виртуального портфеля ({self.balance:.2f}) "
-                    f"не совпадает с Binance ({real_balance:.2f}). Обновляем..."
-                )
+            if abs(real_balance - self.balance) > self.balance * 0.1:
+                logging.warning(f"[SYNC] Обновляем виртуальный баланс с {self.balance:.2f} на {real_balance:.2f}")
                 self.balance = real_balance
                 risk_manager.balance_start = self.balance
                 self._save_portfolio()
@@ -82,9 +71,9 @@ class VirtualPortfolio:
             logging.error(f"BINANCE_SYNC_ERROR | {e}")
 
     def _reset_portfolio(self):
-        """Сбрасывает портфель до начального состояния."""
+        """Сброс портфеля."""
         self.balance = self.initial_balance
-        self.history = []
+        self.history.clear()
         self.buy_count = 0
         self.sell_count = 0
         risk_manager.balance_start = self.balance
@@ -93,43 +82,39 @@ class VirtualPortfolio:
 
     def apply_trade(self, pnl_usdt, trade_type="SELL"):
         """
-        Добавляет сделку в историю.
-        pnl_usdt — прибыль/убыток в USDT (может быть отрицательным).
+        Добавляет сделку:
+        - Для BUY PnL = 0 (только увеличиваем счётчик).
+        - Для SELL PnL = прибыль/убыток, корректируем баланс.
         """
-        self.balance += pnl_usdt
-        self.history.append((datetime.now(), pnl_usdt, trade_type))
-
         if trade_type == "BUY":
             self.buy_count += 1
+            pnl_usdt = 0
         elif trade_type == "SELL":
             self.sell_count += 1
+            self.balance += pnl_usdt
 
-        logging.info(
-            f"VIRTUAL_PNL | {trade_type} | {pnl_usdt:.2f} USDT | Balance={self.balance:.2f} USDT"
-        )
+        self.history.append((datetime.now(), pnl_usdt, trade_type))
+        logging.info(f"VIRTUAL_PNL | {trade_type} | {pnl_usdt:.2f} USDT | Balance={self.balance:.2f} USDT")
 
-        # Обновляем баланс в risk_manager
         risk_manager.balance_start = self.balance
-
         self._save_portfolio()
 
     def calculate_report(self, days: int):
-        """Возвращает PnL за последние N дней."""
+        """Считает PnL за N дней."""
         cutoff = datetime.now() - timedelta(days=days)
         pnl_sum = sum(p for (t, p, _) in self.history if t >= cutoff)
         percent = (pnl_sum / self.initial_balance) * 100 if self.initial_balance > 0 else 0
         return pnl_sum, percent
 
     def full_report(self):
-        """Формирует текстовый отчёт по портфелю."""
+        """Формирует отчёт по портфелю."""
         d, dp = self.calculate_report(1)
         w, wp = self.calculate_report(7)
         m, mp = self.calculate_report(30)
         return (
-            f"📊 Отчёт по виртуальному портфелю:\n"
+            f"📊 Виртуальный портфель:\n"
             f"Баланс: {self.balance:.2f} USDT\n"
-            f"Сделок: {self.buy_count + self.sell_count} "
-            f"(BUY: {self.buy_count} | SELL: {self.sell_count})\n"
+            f"Сделок: {self.buy_count + self.sell_count} (BUY: {self.buy_count} | SELL: {self.sell_count})\n"
             f"24ч: {d:.2f} USDT ({dp:.2f}%)\n"
             f"7д: {w:.2f} USDT ({wp:.2f}%)\n"
             f"30д: {m:.2f} USDT ({mp:.2f}%)"
@@ -140,5 +125,4 @@ virtual_portfolio = VirtualPortfolio(1000)
 
 
 def get_portfolio_status():
-    """Возвращает текущий отчёт по виртуальному портфелю."""
     return virtual_portfolio.full_report()
