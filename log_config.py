@@ -1,4 +1,4 @@
-import logging
+import logging 
 import os
 from logging.handlers import RotatingFileHandler
 from datetime import datetime, timedelta
@@ -62,3 +62,11 @@ signals_handler = RotatingFileHandler(os.path.join(LOG_DIR, "signals.log"),
 signals_handler.setFormatter(logging.Formatter(TRADE_FORMAT))
 signals_logger.addHandler(signals_handler)
 signals_logger.setLevel(logging.INFO)
+
+# === Лог для аналитики ===
+analytics_logger = logging.getLogger("analytics")
+analytics_handler = RotatingFileHandler(os.path.join(LOG_DIR, "analytics.log"),
+                                        maxBytes=MAX_LOG_SIZE, backupCount=BACKUP_COUNT, encoding="utf-8")
+analytics_handler.setFormatter(logging.Formatter(TRADE_FORMAT))
+analytics_logger.addHandler(analytics_handler)
+analytics_logger.setLevel(logging.INFO)

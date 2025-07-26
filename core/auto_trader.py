@@ -1,18 +1,23 @@
-import logging 
+import logging      
 from time import time
 from core.order_manager import futures_manager
 from core.strategy import analyze_market_smart
 from core.adaptive_strategy import get_adaptive_signal
+from core.strategy_manager import select_strategy  # Новый импорт менеджера стратегий
+from core.history_analyzer import log_trade, history_report_text  # Новый импорт анализа истории
+from core.adaptive_optimizer import adaptive_optimize, parameters_report  # Новый импорт оптимизатора
 from core.portfolio import virtual_portfolio
 from core.risk_manager import risk_manager  # Подключаем новый risk_manager
+from core import risk_modes  # Новый импорт для автопереключения режимов риска
 from utils.safe_send import safe_send_message
 from config import CHAT_ID, binance
-from log_config import trades_logger, signals_logger
+from log_config import trades_logger, signals_logger, analytics_logger  # Новый логгер аналитики
 
 last_signal = None
 last_signal_time = 0
 MAX_POSITIONS = 10
 last_positions_count = 0  # Храним количество позиций для отслеживания изменений
+cycle_counter = 0  # Новый счётчик циклов
 
 # === Настройки ===
 TP_PERCENT = 0.011  # 1.1%
@@ -143,13 +148,21 @@ async def notify_position_change(context):
 
 
 async def auto_trade_cycle(context):
-    global last_signal, last_signal_time
+    global last_signal, last_signal_time, cycle_counter
     symbol = "BTC/USDT"
 
     try:
         if not AUTO_TRADING_ENABLED:
             logging.info("AUTO_TRADE | Автотрейдинг отключен, цикл пропущен.")
             return
+
+        # --- Запуск адаптивного оптимизатора каждые 30 циклов ---
+        cycle_counter += 1
+        if cycle_counter >= 30:
+            adaptive_optimize()
+            analytics_logger.info("[ADAPTIVE] Выполнен анализ параметров.")
+            await safe_send_message(context.bot, CHAT_ID, parameters_report())
+            cycle_counter = 0
 
         try:
             real_balance = futures_manager.get_balance("USDT")
@@ -165,7 +178,8 @@ async def auto_trade_cycle(context):
             await notify_position_change(context)
 
         try:
-            signal = analyze_market_smart(symbol)
+            # --- Новый выбор стратегии ---
+            signal = select_strategy(symbol)
             if not signal or "❌" in signal:
                 return
         except Exception as e:
@@ -178,6 +192,16 @@ async def auto_trade_cycle(context):
             except Exception as e:
                 logging.error(f"ADAPTIVE_SIGNAL_ERROR | {e}")
                 return
+
+        # === Автоматическая настройка режима риска ===
+        try:
+            market_state = "UNKNOWN"
+            if "Рынок:" in signal:
+                market_state = signal.split("Рынок:")[1].split("\n")[0].strip()
+            new_mode = risk_modes.auto_adjust_mode(market_state)
+            logging.info(f"[AUTO_MODE] Активный режим риска: {new_mode} ({market_state})")
+        except Exception as e:
+            logging.error(f"AUTO_MODE_ERROR | {e}")
 
         price = futures_manager.get_current_price(symbol)
         if price is None:
@@ -218,6 +242,7 @@ async def auto_trade_cycle(context):
             logging.warning(f"TRADE_BLOCKED | {reason}")
             return
 
+        # --- Открытие BUY ---
         if "ПОКУПАТЬ" in signal and confidence >= 2:
             if len(futures_manager.active_positions) < MAX_POSITIONS:
                 atr = calculate_atr(symbol) if USE_ATR_FOR_VOLATILITY else None
@@ -244,9 +269,9 @@ async def auto_trade_cycle(context):
                     )
                     if success:
                         amt = order.get("amount", "?")
-                        logging.info(f"[DEBUG] Перед записью BUY в портфель: {amt} BTC @ {price}")
                         virtual_portfolio.apply_trade(0, "BUY")
-                        logging.info(f"[DEBUG] После записи BUY в портфель: баланс={virtual_portfolio.balance:.2f}")
+                        log_trade(time(), symbol, "BUY", price, float(amt) if amt != "?" else 0.0, 0.0)
+                        analytics_logger.info(f"BUY {symbol} @ {price} | AMOUNT={amt} BTC")
                         msg = (f"✅ BUY {symbol} @ {price} | AMOUNT={amt} BTC | "
                                f"TP={tp_price} | SL={sl_price} | Active={len(futures_manager.active_positions)}")
                         trades_logger.info(
@@ -261,6 +286,7 @@ async def auto_trade_cycle(context):
             else:
                 logging.info(f"MAX_POSITIONS | Лимит {MAX_POSITIONS} позиций.")
 
+        # --- Закрытие SELL ---
         elif "ПРОДАВАТЬ" in signal and futures_manager.active_positions:
             try:
                 pid = next(iter(futures_manager.active_positions))
@@ -271,16 +297,16 @@ async def auto_trade_cycle(context):
                 success, msg = await futures_manager.close_position(pid)
                 if success:
                     pnl = (price - entry_price) * amount
-                    logging.info(f"[DEBUG] Перед записью SELL: pnl={pnl:.2f}")
                     virtual_portfolio.apply_trade(pnl, "SELL")
-                    logging.info(f"[DEBUG] После записи SELL: баланс={virtual_portfolio.balance:.2f}")
-
+                    log_trade(time(), symbol, "SELL", price, amount, pnl)
+                    analytics_logger.info(f"SELL {symbol} @ {price} | PnL={pnl:.2f} USDT")
                     msg = (f"✅ SELL {symbol} @ {price} | PnL={pnl:.2f} USDT | "
                            f"Balance={virtual_portfolio.balance:.2f} USDT | "
                            f"Active={len(futures_manager.active_positions)}")
                     trades_logger.info(f"CLOSE {symbol} @ {price} | PnL={pnl:.2f} USDT")
                     await safe_send_message(context.bot, CHAT_ID, msg)
                     await safe_send_message(context.bot, CHAT_ID, virtual_portfolio.full_report())
+                    await safe_send_message(context.bot, CHAT_ID, history_report_text())
                     await notify_position_change(context)
                 else:
                     logging.error(f"Ошибка закрытия позиции: {msg}")
